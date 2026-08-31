@@ -782,6 +782,16 @@
   <div class="view-all reveal"><a href="/urunler.html">Tüm Koleksiyonu Gör →</a></div>
 </section>
 
+<style>
+  .kampanya { padding: 3rem 5%; max-width: 1400px; margin: 0 auto; }
+  .kampanya-header { text-align: center; margin-bottom: 1.5rem; }
+  .kampanya-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .kampanya-item { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(27,32,100,0.08); transition: transform 0.4s, box-shadow 0.4s; }
+  .kampanya-item:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(27,32,100,0.15); }
+  .kampanya-item img { width: 100%; height: 300px; display: block; object-fit: cover; object-position: center 20%; }
+  @media(max-width:900px) { .kampanya-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media(max-width:480px) { .kampanya-grid { grid-template-columns: 1fr; } }
+</style>
 <section class="kampanya">
   <div class="kampanya-header reveal">
     <p class="s-tag">Kampanya</p>
