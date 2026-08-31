@@ -65,6 +65,17 @@ footer a{color:var(--orange);text-decoration:none}
 .reveal{opacity:0;transform:translateY(20px);transition:all 0.5s cubic-bezier(0.16,1,0.3,1)}.reveal.visible{opacity:1;transform:translateY(0)}
 @media(max-width:1024px){.products-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:768px){.products-grid{grid-template-columns:repeat(2,1fr);gap:0.8rem}.nav-links{display:none}.hero{padding:6.5rem 5% 2.5rem}}
+
+/* MODAL */
+.modal-backdrop{position:fixed;inset:0;background:rgba(10,12,40,0.88);display:flex;align-items:center;justify-content:center;z-index:1000;opacity:0;pointer-events:none;transition:opacity 0.3s}
+.modal-backdrop.open{opacity:1;pointer-events:all}
+.modal-box{background:var(--white);border-radius:12px;overflow:hidden;max-width:500px;width:90%;box-shadow:0 32px 80px rgba(0,0,0,0.4);transform:scale(0.94);transition:transform 0.3s}
+.modal-backdrop.open .modal-box{transform:scale(1)}
+.modal-img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.modal-info{padding:1.1rem 1.3rem;display:flex;justify-content:space-between;align-items:center}
+.modal-name{font-size:0.95rem;font-weight:600;color:var(--navy);display:block}
+.modal-code{font-size:0.72rem;color:var(--soft);letter-spacing:0.08em}
+.modal-close{background:none;border:none;cursor:pointer;color:var(--soft);font-size:1.4rem;line-height:1;padding:0}
 </style></head><body>
 
 <nav>
@@ -377,5 +388,36 @@ document.querySelectorAll('.filter-btn').forEach(btn=>{
     document.getElementById('count').textContent=count;
   });
 });
+
+// Lightbox
+const modal=document.getElementById('modal');
+const mImg=document.getElementById('modal-img');
+const mName=document.getElementById('modal-name');
+const mCode=document.getElementById('modal-code');
+function closeModal(){modal.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.p-card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    const img=card.querySelector('.p-swatch img');
+    mImg.src=img?img.src:'';
+    mImg.alt=card.querySelector('.p-name').textContent;
+    mName.textContent=card.querySelector('.p-name').textContent;
+    mCode.textContent=card.querySelector('.p-code').textContent;
+    modal.classList.add('open');
+    document.body.style.overflow='hidden';
+  });
+});
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal();});
+document.getElementById('modal-close').addEventListener('click',closeModal);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 </script>
+
+<div class="modal-backdrop" id="modal">
+  <div class="modal-box">
+    <img class="modal-img" id="modal-img" src="" alt="">
+    <div class="modal-info">
+      <div><span class="modal-name" id="modal-name"></span><span class="modal-code" id="modal-code"></span></div>
+      <button class="modal-close" id="modal-close">✕</button>
+    </div>
+  </div>
+</div>
 </body></html>
