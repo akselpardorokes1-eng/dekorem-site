@@ -369,6 +369,16 @@ footer a{color:var(--orange);text-decoration:none}
   <p>© 2025 Dekorem Ltd. · <a href="/">Ana Sayfa</a> · Zambak Sk. No:8, Dikilitaş / İstanbul · <a href="mailto:info@dekorem.com.tr">info@dekorem.com.tr</a></p>
 </footer>
 
+
+<div class="modal-backdrop" id="modal">
+  <div class="modal-box">
+    <img class="modal-img" id="modal-img" src="" alt="">
+    <div class="modal-info">
+      <div><span class="modal-name" id="modal-name"></span><span class="modal-code" id="modal-code"></span></div>
+      <button class="modal-close" id="modal-close">✕</button>
+    </div>
+  </div>
+</div>
 <script>
 // Reveal animation
 const obs=new IntersectionObserver(e=>e.forEach((en,i)=>{if(en.isIntersecting){setTimeout(()=>en.target.classList.add('visible'),i*60);obs.unobserve(en.target)}}),{threshold:0.08});
@@ -410,14 +420,4 @@ modal.addEventListener('click',e=>{if(e.target===modal)closeModal();});
 document.getElementById('modal-close').addEventListener('click',closeModal);
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 </script>
-
-<div class="modal-backdrop" id="modal">
-  <div class="modal-box">
-    <img class="modal-img" id="modal-img" src="" alt="">
-    <div class="modal-info">
-      <div><span class="modal-name" id="modal-name"></span><span class="modal-code" id="modal-code"></span></div>
-      <button class="modal-close" id="modal-close">✕</button>
-    </div>
-  </div>
-</div>
 </body></html>
