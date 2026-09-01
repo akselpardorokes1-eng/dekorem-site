@@ -97,12 +97,11 @@
   .hero {
     min-height: 100vh; position: relative;
     display: flex; align-items: center; justify-content: center;
-    background: var(--navy-deep); overflow: hidden;
+    background: url('images/mutfak-foto.png') center/cover no-repeat; overflow: hidden;
   }
   .hero::before {
     content: ''; position: absolute; inset: 0;
-    background:
-      linear-gradient(160deg, var(--navy) 0%, var(--navy-dark) 40%, var(--navy-deep) 100%);
+    background: rgba(11, 21, 40, 0.72);
   }
   .hero::after {
     content: ''; position: absolute; inset: 0;
