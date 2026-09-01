@@ -381,9 +381,9 @@ footer a{color:var(--orange);text-decoration:none}
 <!-- 0.20mm section -->
 <div id="section-020">
 <div class="filters" id="filters-020">
-  <button class="filter-btn active" data-filter-020="all">Tümü</button>
-  <button class="filter-btn" data-filter-020="ahsap">Ahşap</button>
-  <button class="filter-btn" data-filter-020="duz">Düz Renk</button>
+  <button class="filter-btn active" data-f20="all">Tümü</button>
+  <button class="filter-btn" data-f20="ahsap">Ahşap</button>
+  <button class="filter-btn" data-f20="duz">Düz Renk</button>
 </div>
 <p class="count" style="text-align:center;padding:1rem 0 0;font-size:0.75rem;color:var(--soft)"><span id="count-020">24</span> ürün</p>
 <section class="products">
@@ -527,7 +527,7 @@ document.querySelectorAll('[data-filter-020]').forEach(btn=>{
   btn.addEventListener('click',()=>{
     document.querySelectorAll('[data-filter-020]').forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
-    const f=btn.dataset.filter020;
+    const f=btn.getAttribute("data-f20");
     let count=0;
     document.querySelectorAll('#section-020 .p-card').forEach(card=>{
       if(f==='all'||card.dataset.cat===f){card.classList.remove('hidden');count++}
