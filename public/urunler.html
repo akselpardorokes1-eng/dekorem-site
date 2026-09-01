@@ -509,7 +509,7 @@ document.querySelectorAll('.thickness-btn').forEach(btn=>{
     btn.classList.add('active');
     const t=btn.dataset.thickness;
     document.getElementById('section-040').style.display=t==='040'?'':'none';
-    document.getElementById('section-020').style.display=t==='020'?'':'none';
+    document.getElementById('section-020').style.display=t==='020'?'block':'none';
     if(t==='020'){
       document.querySelectorAll('#section-020 .reveal').forEach(el=>el.classList.add('visible'));
     }
