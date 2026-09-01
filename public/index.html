@@ -767,9 +767,9 @@
   .kampanya { padding: 3rem 5%; max-width: 1400px; margin: 0 auto; }
   .kampanya-header { text-align: center; margin-bottom: 1.5rem; }
   .kampanya-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
-  .kampanya-item { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(27,32,100,0.08); transition: transform 0.4s, box-shadow 0.4s; }
-  .kampanya-item:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(27,32,100,0.15); }
-  .kampanya-item img { width: 100%; height: auto; display: block; }
+  .kampanya-item { border-radius: 0; overflow: hidden; }
+
+  .kampanya-item img { width: 100%; height: auto; display: block; -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%); mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%); }
   @media(max-width:900px) { .kampanya-grid { grid-template-columns: repeat(2, 1fr); } }
   @media(max-width:480px) { .kampanya-grid { grid-template-columns: 1fr; } }
 </style>
@@ -779,10 +779,6 @@
     <h2 class="s-title">Öne Çıkan Desenler</h2>
   </div>
   <div class="kampanya-grid">
-    <div class="kampanya-item reveal"><img src="images/urunler/boyanabilir-pp/13e973c8-4e73-42df-8910-e7893f98e066.JPG" alt="Soft Terra"></div>
-    <div class="kampanya-item reveal"><img src="images/urunler/boyanabilir-pp/54b9ab12-6eef-494e-8fd3-172e46ece661.JPG" alt="Soft Kadife"></div>
-    <div class="kampanya-item reveal"><img src="images/urunler/boyanabilir-pp/9266ca0d-0caf-42ff-8b7f-f41040d5c293.JPG" alt="Parlak Beyaz"></div>
-    <div class="kampanya-item reveal"><img src="images/urunler/boyanabilir-pp/ca0efb5b-4ac2-4cc9-9e64-ef5aad2e0237.JPG" alt="Saten Beyaz"></div>
     <div class="kampanya-item reveal" style="grid-column:1/-1"><img src="images/urunler/boyanabilir-pp/one-cikan-desenler.png" alt="Öne Çıkan Desenler"></div>
   </div>
   <div class="view-all reveal" style="text-align:center;margin-top:2rem"><a href="/urunler.html">Tüm Koleksiyonu Gör →</a></div>
