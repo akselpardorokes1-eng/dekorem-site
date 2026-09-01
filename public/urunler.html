@@ -76,6 +76,12 @@ footer a{color:var(--orange);text-decoration:none}
 .modal-name{font-size:0.95rem;font-weight:600;color:var(--navy);display:block}
 .modal-code{font-size:0.72rem;color:var(--soft);letter-spacing:0.08em}
 .modal-close{background:none;border:none;cursor:pointer;color:var(--soft);font-size:1.4rem;line-height:1;padding:0}
+
+/* THICKNESS TABS */
+.thickness-tabs{display:flex;gap:0.6rem;justify-content:center;padding:1.5rem 0 0}
+.thickness-btn{padding:0.55rem 2rem;font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;border:2px solid var(--navy);background:transparent;color:var(--navy);border-radius:99px;cursor:pointer;transition:all 0.3s}
+.thickness-btn.active{background:var(--navy);color:var(--white)}
+#section-020{display:none}
 </style></head><body>
 
 <nav>
@@ -97,6 +103,12 @@ footer a{color:var(--orange);text-decoration:none}
   </div>
 </section>
 
+<div class="thickness-tabs">
+  <button class="thickness-btn active" data-thickness="040">0.40 mm</button>
+  <button class="thickness-btn" data-thickness="020">0.20 mm</button>
+</div>
+
+<div id="section-040">
 <div class="filters">
   <button class="filter-btn active" data-filter="all">Tümü</button>
   <button class="filter-btn" data-filter="ahsap">Ahşap</button>
@@ -364,13 +376,113 @@ footer a{color:var(--orange);text-decoration:none}
 </section>
 
 
-<section style="padding:3rem 5% 4rem;max-width:1200px;margin:0 auto">
-  <div style="text-align:center;margin-bottom:2rem">
-    <p style="font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#E8752A">Koleksiyon</p>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;color:#1B2064;margin-top:0.3rem">0.20 PVC Sarma & Kapı Folyosu</h2>
+</div>
+
+<!-- 0.20mm section -->
+<div id="section-020">
+<p class="count" style="text-align:center;padding:1rem 0 0;font-size:0.75rem;color:var(--soft)"><span id="count-020">24</span> ürün</p>
+<section class="products">
+  <div class="products-grid">
+<div class="p-card reveal" data-cat="ahsap">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Açık Yenice Meşe YKZ 02-20.png" alt="Açık Yenice Meşe YKZ 02-20"></div>
+<div class="p-info"><span class="p-name">Açık Yenice Meşe</span><span class="p-code">YKZ 02-20</span><span class="p-cat">Ahşap</span></div>
+</div>
+<div class="p-card reveal" data-cat="ahsap">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Bolu Meşe BLM01-20.png" alt="Bolu Meşe BLM01-20"></div>
+<div class="p-info"><span class="p-name">Bolu Meşe</span><span class="p-code">BLM01-20</span><span class="p-cat">Ahşap</span></div>
+</div>
+<div class="p-card reveal" data-cat="duz">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Boyalı PP Beyaz Freze Deep 03A.png" alt="Boyalı PP Beyaz Freze Deep 03A"></div>
+<div class="p-info"><span class="p-name">Boyalı PP Beyaz Freze Deep</span><span class="p-code">03A</span><span class="p-cat">Düz Renk</span></div>
+</div>
+<div class="p-card reveal" data-cat="duz">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Boyanabilir PP Düz Flat 01.png" alt="Boyanabilir PP Düz Flat 01"></div>
+<div class="p-info"><span class="p-name">Boyanabilir PP Düz Flat</span><span class="p-code">01</span><span class="p-cat">Düz Renk</span></div>
+</div>
+<div class="p-card reveal" data-cat="duz">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Boyanabilir PP Freze Deep 01.png" alt="Boyanabilir PP Freze Deep 01"></div>
+<div class="p-info"><span class="p-name">Boyanabilir PP Freze Deep</span><span class="p-code">01</span><span class="p-cat">Düz Renk</span></div>
+</div>
+<div class="p-card reveal" data-cat="ahsap">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Bursa Ceviz NW 317-20.png" alt="Bursa Ceviz NW 317-20"></div>
+<div class="p-info"><span class="p-name">Bursa Ceviz</span><span class="p-code">NW 317-20</span><span class="p-cat">Ahşap</span></div>
+</div>
+<div class="p-card reveal" data-cat="ahsap">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Bursa Teak BT01-20.png" alt="Bursa Teak BT01-20"></div>
+<div class="p-info"><span class="p-name">Bursa Teak</span><span class="p-code">BT01-20</span><span class="p-cat">Ahşap</span></div>
+</div>
+<div class="p-card reveal" data-cat="duz">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Bute Beyaz WH14K-20P.png" alt="Bute Beyaz WH14K-20P"></div>
+<div class="p-info"><span class="p-name">Bute Beyaz</span><span class="p-code">WH14K-20P</span><span class="p-cat">Düz Renk</span></div>
+</div>
+<div class="p-card reveal" data-cat="ahsap">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Buz Meşe EK06-20.png" alt="Buz Meşe EK06-20"></div>
+<div class="p-info"><span class="p-name">Buz Meşe</span><span class="p-code">EK06-20</span><span class="p-cat">Ahşap</span></div>
+</div>
+<div class="p-card reveal" data-cat="duz">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Çizilmez Alman Saten CZF 01-20P.png" alt="Çizilmez Alman Saten CZF 01-20P"></div>
+<div class="p-info"><span class="p-name">Çizilmez Alman Saten</span><span class="p-code">CZF 01-20P</span><span class="p-cat">Düz Renk</span></div>
+</div>
+<div class="p-card reveal" data-cat="ahsap">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Gri Meşe GY028-20.png" alt="Gri Meşe GY028-20"></div>
+<div class="p-info"><span class="p-name">Gri Meşe</span><span class="p-code">GY028-20</span><span class="p-cat">Ahşap</span></div>
+</div>
+<div class="p-card reveal" data-cat="ahsap">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Gri Yenice Meşe DKZ 02-20.png" alt="Gri Yenice Meşe DKZ 02-20"></div>
+<div class="p-info"><span class="p-name">Gri Yenice Meşe</span><span class="p-code">DKZ 02-20</span><span class="p-cat">Ahşap</span></div>
+</div>
+<div class="p-card reveal" data-cat="duz">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Koyu Antrasit STF 14.png" alt="Koyu Antrasit STF 14"></div>
+<div class="p-info"><span class="p-name">Koyu Antrasit</span><span class="p-code">STF 14</span><span class="p-cat">Düz Renk</span></div>
+</div>
+<div class="p-card reveal" data-cat="ahsap">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Koyu Ceviz A304-20.png" alt="Koyu Ceviz A304-20"></div>
+<div class="p-info"><span class="p-name">Koyu Ceviz</span><span class="p-code">A304-20</span><span class="p-cat">Ahşap</span></div>
+</div>
+<div class="p-card reveal" data-cat="ahsap">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Meşe 1819-20.png" alt="Meşe 1819-20"></div>
+<div class="p-info"><span class="p-name">Meşe</span><span class="p-code">1819-20</span><span class="p-cat">Ahşap</span></div>
+</div>
+<div class="p-card reveal" data-cat="duz">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Metal 0031-20.png" alt="Metal 0031-20"></div>
+<div class="p-info"><span class="p-name">Metal</span><span class="p-code">0031-20</span><span class="p-cat">Düz Renk</span></div>
+</div>
+<div class="p-card reveal" data-cat="ahsap">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Naturel Beyaz Meşe WK07-20.png" alt="Naturel Beyaz Meşe WK07-20"></div>
+<div class="p-info"><span class="p-name">Naturel Beyaz Meşe</span><span class="p-code">WK07-20</span><span class="p-cat">Ahşap</span></div>
+</div>
+<div class="p-card reveal" data-cat="ahsap">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Ozigo OZI 01-20.png" alt="Ozigo OZI 01-20"></div>
+<div class="p-info"><span class="p-name">Ozigo</span><span class="p-code">OZI 01-20</span><span class="p-cat">Ahşap</span></div>
+</div>
+<div class="p-card reveal" data-cat="ahsap">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Sarı Meşe YK07-20.png" alt="Sarı Meşe YK07-20"></div>
+<div class="p-info"><span class="p-name">Sarı Meşe</span><span class="p-code">YK07-20</span><span class="p-cat">Ahşap</span></div>
+</div>
+<div class="p-card reveal" data-cat="duz">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Saten Antrasit STF10-20.png" alt="Saten Antrasit STF10-20"></div>
+<div class="p-info"><span class="p-name">Saten Antrasit</span><span class="p-code">STF10-20</span><span class="p-cat">Düz Renk</span></div>
+</div>
+<div class="p-card reveal" data-cat="duz">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Saten Beyaz SM 01 K 20P.png" alt="Saten Beyaz SM 01 K 20P"></div>
+<div class="p-info"><span class="p-name">Saten Beyaz</span><span class="p-code">SM 01 K 20P</span><span class="p-cat">Düz Renk</span></div>
+</div>
+<div class="p-card reveal" data-cat="duz">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Saten Kapuçino STF12-20.png" alt="Saten Kapuçino STF12-20"></div>
+<div class="p-info"><span class="p-name">Saten Kapuçino</span><span class="p-code">STF12-20</span><span class="p-cat">Düz Renk</span></div>
+</div>
+<div class="p-card reveal" data-cat="duz">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Saten Krem STF17-20.png" alt="Saten Krem STF17-20"></div>
+<div class="p-info"><span class="p-name">Saten Krem</span><span class="p-code">STF17-20</span><span class="p-cat">Düz Renk</span></div>
+</div>
+<div class="p-card reveal" data-cat="duz">
+<div class="p-swatch"><img src="images/urunler/020-folyo/Saten Yeni Beyaz 2095-020.png" alt="Saten Yeni Beyaz 2095-020"></div>
+<div class="p-info"><span class="p-name">Saten Yeni Beyaz</span><span class="p-code">2095-020</span><span class="p-cat">Düz Renk</span></div>
+</div>
   </div>
-  <img src="images/urunler/020-folyo/020-pp.png" alt="0.20 PVC Sarma ve Kapı Folyosu Renk Skalası" style="width:100%;border-radius:12px;box-shadow:0 8px 32px rgba(27,32,100,0.1);display:block">
 </section>
+
+</div>
 
 <footer>
   <div class="footer-logo"><img src="images/logo-white.svg" alt="Dekorem" style="height:24px"></div>
@@ -389,6 +501,18 @@ footer a{color:var(--orange);text-decoration:none}
   </div>
 </div>
 <script>
+
+// Thickness tabs
+document.querySelectorAll('.thickness-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.thickness-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const t=btn.dataset.thickness;
+    document.getElementById('section-040').style.display=t==='040'?'':'none';
+    document.getElementById('section-020').style.display=t==='020'?'':'none';
+  });
+});
+
 // Reveal animation
 const obs=new IntersectionObserver(e=>e.forEach((en,i)=>{if(en.isIntersecting){setTimeout(()=>en.target.classList.add('visible'),i*60);obs.unobserve(en.target)}}),{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
