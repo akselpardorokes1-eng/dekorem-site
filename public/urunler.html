@@ -506,44 +506,48 @@ footer a{color:var(--orange);text-decoration:none}
 
 <div id="section-pvcpet" style="display:none">
   <style>
-    .pvcpet-hero{background:var(--navy);padding:4rem 5%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:100%}
-    .pvcpet-left .label{font-size:0.6rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:1.2rem}
-    .pvcpet-left h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,5rem);font-weight:300;color:var(--white);line-height:1.05;margin-bottom:1.5rem}
-    .pvcpet-left h2 strong{font-weight:700;font-family:'DM Sans',sans-serif;font-size:0.55em;letter-spacing:0.04em;display:block;color:rgba(255,255,255,0.5);margin-bottom:0.3rem}
-    .pvcpet-left p{color:rgba(255,255,255,0.5);font-size:0.9rem;line-height:1.8;max-width:400px}
-    .pvcpet-stats{display:flex;gap:2.5rem;margin-top:2.5rem}
-    .pvcpet-stat .num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--orange);line-height:1}
-    .pvcpet-stat .txt{font-size:0.72rem;color:rgba(255,255,255,0.4);margin-top:0.3rem;line-height:1.4}
-    .pvcpet-right{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.06)}
-    .pvcpet-feat{padding:2rem;background:rgba(255,255,255,0.03)}
-    .pvcpet-feat .icon{font-size:1.4rem;margin-bottom:0.8rem}
-    .pvcpet-feat h4{font-size:0.8rem;font-weight:600;color:var(--white);margin-bottom:0.4rem;letter-spacing:0.04em}
-    .pvcpet-feat p{font-size:0.76rem;color:rgba(255,255,255,0.4);line-height:1.6}
-    @media(max-width:768px){.pvcpet-hero{grid-template-columns:1fr}.pvcpet-right{display:none}.pvcpet-stats{gap:1.5rem}}
+    .pvcpet-banner{position:relative;height:480px;overflow:hidden}
+    .pvcpet-banner img{width:100%;height:100%;object-fit:cover;object-position:center}
+    .pvcpet-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(11,21,40,0.82) 40%,rgba(11,21,40,0.2) 100%)}
+    .pvcpet-banner-text{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;padding:0 8%}
+    .pvcpet-banner-text .tag{font-size:0.6rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:1rem}
+    .pvcpet-banner-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,4.2rem);font-weight:300;color:#fff;line-height:1.1;margin-bottom:1.2rem}
+    .pvcpet-banner-text p{color:rgba(255,255,255,0.6);font-size:0.92rem;line-height:1.8;max-width:460px}
+    .pvcpet-photos{display:grid;grid-template-columns:1fr 1fr;gap:0}
+    .pvcpet-photo{position:relative;overflow:hidden;height:360px}
+    .pvcpet-photo img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}
+    .pvcpet-photo:hover img{transform:scale(1.04)}
+    .pvcpet-photo-label{position:absolute;bottom:0;left:0;right:0;padding:2rem;background:linear-gradient(transparent,rgba(11,21,40,0.75));color:#fff}
+    .pvcpet-photo-label h4{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;margin-bottom:0.3rem}
+    .pvcpet-photo-label p{font-size:0.78rem;color:rgba(255,255,255,0.65)}
+    @media(max-width:768px){.pvcpet-photos{grid-template-columns:1fr}.pvcpet-banner{height:380px}}
   </style>
-  <div class="pvcpet-hero">
-    <div class="pvcpet-left">
-      <p class="label">Panel Folyoları</p>
-      <h2><strong>2D PVC / PET</strong>Laminasyon<br><em>Folyo</em></h2>
-      <p>Türkiye'nin önde gelen MDF firmalarına yüksek kaliteli düz yüzey laminasyon folyoları. Mobilya ve panel üretiminde mükemmel sonuç.</p>
-      <div class="pvcpet-stats">
-        <div class="pvcpet-stat"><div class="num">30+</div><div class="txt">Yıllık<br>Deneyim</div></div>
-        <div class="pvcpet-stat"><div class="num">100+</div><div class="txt">Ülkeye<br>İhracat</div></div>
-        <div class="pvcpet-stat"><div class="num">500+</div><div class="txt">Mutlu<br>İş Ortağı</div></div>
+  <div class="pvcpet-banner">
+    <img src="images/urunler/pvc-pet/foil-5a.jpg" alt="PVC PET Panel Folyo">
+    <div class="pvcpet-banner-text">
+      <p class="tag">2D Panel Folyoları</p>
+      <h2>PVC / PET<br>Laminasyon Folyo</h2>
+      <p>Türkiye'nin önde gelen MDF firmalarına yüksek kaliteli 2D panel laminasyon folyoları. Mobilya ve panel üretiminde mükemmel sonuç.</p>
+    </div>
+  </div>
+  <div class="pvcpet-photos">
+    <div class="pvcpet-photo">
+      <img src="images/urunler/pvc-pet/mutfak-uygulama.jpg" alt="Mutfak Uygulaması">
+      <div class="pvcpet-photo-label">
+        <h4>Mutfak Uygulamaları</h4>
+        <p>Nem ve ısıya dayanıklı yüzeyler</p>
       </div>
     </div>
-    <div class="pvcpet-right">
-      <div class="pvcpet-feat"><div class="icon">⬛</div><h4>2D Düz Laminasyon</h4><p>Pürüzsüz MDF yüzeylere mükemmel yapışma, sıfır hava kabarcığı.</p></div>
-      <div class="pvcpet-feat"><div class="icon">♻️</div><h4>PET Seçeneği</h4><p>Geri dönüştürülebilir PET yapısıyla çevreci üretim standartları.</p></div>
-      <div class="pvcpet-feat"><div class="icon">🔬</div><h4>Yüksek Dayanım</h4><p>Nem, UV ve ısıya karşı dirençli yapı, uzun ömürlü yüzeyler.</p></div>
-      <div class="pvcpet-feat"><div class="icon">🏭</div><h4>Endüstriyel Ölçek</h4><p>Büyük MDF üreticilerine özel rulo ve kesim seçenekleri.</p></div>
+    <div class="pvcpet-photo">
+      <img src="images/urunler/pvc-pet/yatak-odasi-uygulama.jpg" alt="Yatak Odası Uygulaması">
+      <div class="pvcpet-photo-label">
+        <h4>İç Mekan Panelleri</h4>
+        <p>Duvar ve dekoratif panel çözümleri</p>
+      </div>
     </div>
   </div>
   <section class="products">
     <div class="products-grid" id="grid-pvcpet">
-      <div style="grid-column:1/-1;text-align:center;padding:3rem 0;color:var(--soft);">
-        <p style="font-size:0.85rem;">Ürün görselleri yakında eklenecek.</p>
-      </div>
     </div>
   </section>
 </div>
