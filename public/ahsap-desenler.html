@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ahşap Desenler — Dekorem</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1B2064;--navy-deep:#0B1528;--orange:#E8752A;--bg:#F5F6F9;--text:#1C2030;--soft:#646B80;--white:#FFF;--brd:rgba(27,32,100,0.06)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text)}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0.9rem 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--brd)}
+.logo-link{display:inline-block;text-decoration:none;line-height:0}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{font-size:0.72rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--soft);text-decoration:none;transition:color 0.3s}
+.nav-links a:hover{color:var(--navy)}
+.nav-cta{padding:0.5rem 1.4rem!important;background:var(--orange)!important;color:var(--white)!important;border-radius:99px;font-size:0.7rem!important}
+.hero{padding:9rem 5% 5rem;text-align:center;position:relative;overflow:hidden;background:url('images/urunler-hero.jpg') center/cover no-repeat}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(11,21,40,0.70)}
+.hero-content{position:relative;z-index:2}
+.hero-tag{font-size:0.65rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--orange);margin-bottom:0.8rem;font-weight:600}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:300;color:var(--white);line-height:1.15;margin-bottom:1rem}
+.hero h1 em{font-style:italic;color:rgba(232,117,42,0.9)}
+.hero p{color:rgba(255,255,255,0.65);font-size:1rem;max-width:560px;margin:0 auto 2rem;line-height:1.7}
+.hero-cta{display:inline-block;padding:0.9rem 2.5rem;border:1.5px solid rgba(255,255,255,0.4);color:var(--white);text-decoration:none;font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;border-radius:99px;transition:all 0.3s}
+.hero-cta:hover{background:var(--orange);border-color:var(--orange)}
+.features{padding:5rem 5%;max-width:1100px;margin:0 auto}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+.f-card{background:var(--white);border-radius:16px;padding:2.5rem 2rem;border:1px solid var(--brd)}
+.f-icon{font-size:1.8rem;margin-bottom:1rem}
+.f-card h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:var(--navy);margin-bottom:0.6rem}
+.f-card p{color:var(--soft);font-size:0.88rem;line-height:1.7}
+.section-header{text-align:center;margin-bottom:3rem}
+.s-tag{font-size:0.65rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--orange);margin-bottom:0.5rem;font-weight:600}
+.s-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;color:var(--navy)}
+.gallery{padding:3rem 5%;max-width:1300px;margin:0 auto}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.g-item{border-radius:12px;overflow:hidden;background:var(--white);box-shadow:0 2px 16px rgba(27,32,100,0.07);transition:transform 0.3s,box-shadow 0.3s}
+.g-item:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(27,32,100,0.14)}
+.g-item img{width:100%;height:220px;object-fit:cover;display:block}
+.g-label{padding:0.8rem 1rem;font-size:0.75rem;font-weight:500;color:var(--soft)}
+.cta-band{margin:5rem 5%;background:var(--navy);border-radius:20px;padding:4rem;text-align:center}
+.cta-band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;color:var(--white);margin-bottom:1rem}
+.cta-band p{color:rgba(255,255,255,0.55);max-width:480px;margin:0 auto 2rem;font-size:0.9rem;line-height:1.7}
+.btn-white{display:inline-block;padding:0.9rem 2.8rem;background:var(--white);color:var(--navy);font-size:0.85rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:99px;transition:all 0.3s}
+.btn-white:hover{background:var(--orange);color:var(--white)}
+footer{background:var(--navy);padding:3rem 5% 1.5rem;color:rgba(255,255,255,0.55);font-size:0.82rem}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem}
+.footer-brand p{line-height:1.7;margin-top:0.5rem}
+.footer-col h4{color:var(--white);font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem}
+.footer-col a{display:block;color:rgba(255,255,255,0.45);text-decoration:none;margin-bottom:0.5rem;font-size:0.8rem;transition:color 0.3s}
+.footer-col a:hover{color:var(--orange)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:1.5rem;text-align:center}
+@media(max-width:900px){.features-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(2,1fr)}.footer-top{grid-template-columns:1fr 1fr}.nav-links li:not(:last-child){display:none}}
+@media(max-width:480px){.gallery-grid{grid-template-columns:repeat(2,1fr)}.cta-band{padding:2.5rem 1.5rem}}
+</style>
+</head><body>
+<nav>
+  <a href="/index.html" class="logo-link"><img src="images/logo.svg" alt="Dekorem" style="height:36px;width:auto"></a>
+  <ul class="nav-links">
+    <li><a href="/index.html">Ana Sayfa</a></li>
+    <li><a href="/urunler.html">Ürünler</a></li>
+    <li><a href="/index.html#contact" class="nav-cta">İletişim</a></li>
+  </ul>
+</nav>
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-tag">Kategori 01</p>
+    <h1>Doğanın <em>Sıcaklığını</em><br>Yüzeylere Taşıyın</h1>
+    <p>Meşe, ceviz, teak ve daha fazlası — 40'tan fazla ahşap desen seçeneğiyle mekanlarınıza doğal sıcaklık katın.</p>
+    <a href="/urunler.html" class="hero-cta">Tüm Ürünleri Gör →</a>
+  </div>
+</section>
+<section class="features">
+  <div class="section-header">
+    <p class="s-tag">Özellikler</p>
+    <h2 class="s-title">Neden Bu Kategori?</h2>
+  </div>
+  <div class="features-grid">
+    <div class="f-card"><div class="f-icon">🌳</div><h3>Gerçekçi Doku</h3><p>Yüksek çözünürlüklü baskı teknolojisiyle gerçek ahşap dokusunu yansıtan yüzeyler.</p></div>
+    <div class="f-card"><div class="f-icon">🎨</div><h3>Geniş Renk Yelpazesi</h3><p>Açık meşeden koyu cevize, doğal tonlardan modern grimlere uzanan geniş palet.</p></div>
+    <div class="f-card"><div class="f-icon">🔒</div><h3>Dayanıklı Yapı</h3><p>Nem, çizilme ve UV ışınlarına karşı dirençli PVC altyapı ile uzun ömürlü kullanım.</p></div>
+  </div>
+</section>
+<section class="gallery">
+  <div class="section-header">
+    <p class="s-tag">Koleksiyon</p>
+    <h2 class="s-title">Desen Seçenekleri</h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="g-item"><img src="images/urunler/020-folyo/acik-yenice-mese-ykz02-20.png" alt="Açık Yenice Meşe"><div class="g-label">Açık Yenice Meşe</div></div>
+    <div class="g-item"><img src="images/urunler/020-folyo/bolu-mese-blm01-20.png" alt="Bolu Meşe"><div class="g-label">Bolu Meşe</div></div>
+    <div class="g-item"><img src="images/urunler/020-folyo/bursa-ceviz-nw317-20.png" alt="Bursa Ceviz"><div class="g-label">Bursa Ceviz</div></div>
+    <div class="g-item"><img src="images/urunler/020-folyo/bursa-teak-bt01-20.png" alt="Bursa Teak"><div class="g-label">Bursa Teak</div></div>
+    <div class="g-item"><img src="images/urunler/020-folyo/buz-mese-ek06-20.png" alt="Buz Meşe"><div class="g-label">Buz Meşe</div></div>
+    <div class="g-item"><img src="images/urunler/020-folyo/gri-mese-gy028-20.png" alt="Gri Meşe"><div class="g-label">Gri Meşe</div></div>
+    <div class="g-item"><img src="images/urunler/020-folyo/koyu-ceviz-a304-20.png" alt="Koyu Ceviz"><div class="g-label">Koyu Ceviz</div></div>
+    <div class="g-item"><img src="images/urunler/020-folyo/mese-1819-20.png" alt="Meşe 1819"><div class="g-label">Meşe 1819</div></div>
+    <div class="g-item"><img src="images/urunler/020-folyo/naturel-beyaz-mese-wk07-20.png" alt="Naturel Beyaz Meşe"><div class="g-label">Naturel Beyaz Meşe</div></div>
+    <div class="g-item"><img src="images/urunler/020-folyo/sari-mese-yk07-20.png" alt="Sarı Meşe"><div class="g-label">Sarı Meşe</div></div>
+    <div class="g-item"><img src="images/urunler/020-folyo/gri-yenice-mese-dkz02-20.png" alt="Gri Yenice Meşe"><div class="g-label">Gri Yenice Meşe</div></div>
+    <div class="g-item"><img src="images/urunler/020-folyo/ozigo-ozi01-20.png" alt="Ozigo"><div class="g-label">Ozigo</div></div>
+  </div>
+</section>
+<div class="cta-band">
+  <h2>Tüm Koleksiyonu Keşfedin</h2>
+  <p>120'den fazla desen ve renk seçeneğiyle mekanlarınıza değer katın.</p>
+  <a href="/urunler.html" class="btn-white">Ürünlere Git →</a>
+</div>
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="/index.html" class="logo-link"><img src="images/logo-white.svg" alt="Dekorem" style="height:32px;width:auto;margin-bottom:1rem"></a>
+      <p>1995'ten beri PVC kaplama sektöründe güvenin ve kalitenin adresi. İstanbul, Türkiye.</p>
+    </div>
+    <div class="footer-col"><h4>Ürünler</h4><a href="/urunler.html">Ahşap Desenler</a><a href="/urunler.html">Düz Renkler</a><a href="/urunler.html">High Gloss</a><a href="/urunler.html">Süper Mat</a></div>
+    <div class="footer-col"><h4>Kurumsal</h4><a href="/index.html#about">Hakkımızda</a><a href="/urunler.html">Ürünler</a><a href="/index.html#contact">İletişim</a></div>
+    <div class="footer-col"><h4>İletişim</h4><a href="mailto:info@dekorem.com.tr">info@dekorem.com.tr</a><a href="#">İstanbul, Türkiye</a></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Dekorem. Tüm hakları saklıdır.</p>
+  </div>
+</footer>
+</body></html>
