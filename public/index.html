@@ -767,13 +767,12 @@
   .kampanya { padding: 1rem 0; max-width: 100%; margin: 0 auto; }
   .kampanya-header { text-align: center; margin-bottom: 1.5rem; }
   .kampanya-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
-  .kampanya-item { border-radius: 0; overflow: hidden; }
-
-  .kampanya-item img { width: 100%; height: auto; display: block;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
-    -webkit-mask-composite: source-in;
-    mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
-    mask-composite: intersect; }
+  .kampanya-item { border-radius: 0; overflow: hidden; position: relative; }
+  .kampanya-item::after { content: ''; position: absolute; inset: 0; pointer-events: none;
+    background:
+      linear-gradient(to right,  #F5F6F9 0%, transparent 18%, transparent 82%, #F5F6F9 100%),
+      linear-gradient(to bottom, #F5F6F9 0%, transparent 14%, transparent 86%, #F5F6F9 100%); }
+  .kampanya-item img { width: 100%; height: auto; display: block; }
   @media(max-width:900px) { .kampanya-grid { grid-template-columns: repeat(2, 1fr); } }
   @media(max-width:480px) { .kampanya-grid { grid-template-columns: 1fr; } }
 </style>
