@@ -766,21 +766,22 @@
 <style>
   .kampanya { padding: 3rem 5%; max-width: 1200px; margin: 0 auto; }
   .kampanya-header { text-align: center; margin-bottom: 1.5rem; }
-  .kampanya-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
   .kampanya-item { border-radius: 16px; overflow: hidden; box-shadow: 0 8px 40px rgba(27,32,100,0.10); }
   .kampanya-item img { width: 100%; height: auto; display: block; }
-  @media(max-width:900px) { .kampanya-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media(max-width:480px) { .kampanya-grid { grid-template-columns: 1fr; } }
+  .btn-koleksiyon { display: inline-block; margin-top: 2.5rem; padding: 1.1rem 3rem; background: var(--navy); color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border-radius: 99px; box-shadow: 0 8px 32px rgba(27,32,100,0.22); transition: transform 0.3s, box-shadow 0.3s, background 0.3s; }
+  .btn-koleksiyon:hover { background: var(--orange); transform: translateY(-3px); box-shadow: 0 16px 48px rgba(232,117,42,0.3); }
 </style>
 <section class="kampanya">
   <div class="kampanya-header reveal">
     <p class="s-tag">Koleksiyon</p>
     <h2 class="s-title">Öne Çıkan Desenler</h2>
   </div>
-  <div class="kampanya-grid">
-    <div class="kampanya-item reveal" style="grid-column:1/-1"><img src="images/urunler/boyanabilir-pp/one-cikan-desenler.png" alt="Öne Çıkan Desenler"></div>
+  <div class="reveal">
+    <div class="kampanya-item"><img src="images/urunler/boyanabilir-pp/one-cikan-desenler.png" alt="Öne Çıkan Desenler"></div>
   </div>
-  <div class="view-all reveal" style="text-align:center;margin-top:2rem"><a href="/urunler.html">Tüm Koleksiyonu Gör →</a></div>
+  <div style="text-align:center">
+    <a href="/urunler.html" class="btn-koleksiyon reveal">Tüm Koleksiyonu Gör →</a>
+  </div>
 </section>
 
 <section id="categories">
