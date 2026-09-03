@@ -829,7 +829,7 @@
     <h2 class="s-title">Projeleriniz İçin<br>Yanınızdayız</h2>
     <p class="s-desc">Ürünlerimiz ve çözüm ortaklığı hakkında bilgi almak için bize ulaşın.</p>
 
-    <form class="cta-form" id="cta-form" action="https://formspree.io/f/FORM_ID_BURAYA" method="POST">
+    <form class="cta-form" id="cta-form">
       <div class="row2">
         <input type="text" name="name" placeholder="Adınız Soyadınız" required>
         <input type="tel" name="phone" placeholder="Telefon Numaranız">
@@ -900,28 +900,22 @@
   // Contact form
   const ctaForm = document.getElementById('cta-form');
   if(ctaForm){
-    ctaForm.addEventListener('submit', async function(e){
+    ctaForm.addEventListener('submit', function(e){
       e.preventDefault();
-      const btn = ctaForm.querySelector('button');
-      btn.textContent = 'Gönderiliyor...';
-      btn.disabled = true;
-      try {
-        const res = await fetch(ctaForm.action, {
-          method: 'POST',
-          body: new FormData(ctaForm),
-          headers: { 'Accept': 'application/json' }
-        });
-        if(res.ok){
-          ctaForm.style.display = 'none';
-          document.getElementById('cta-sent').style.display = 'block';
-        } else {
-          btn.textContent = 'Hata oluştu, tekrar deneyin';
-          btn.disabled = false;
-        }
-      } catch {
-        btn.textContent = 'Hata oluştu, tekrar deneyin';
-        btn.disabled = false;
-      }
+      const name    = ctaForm.querySelector('[name="name"]').value;
+      const phone   = ctaForm.querySelector('[name="phone"]').value;
+      const email   = ctaForm.querySelector('[name="email"]').value;
+      const message = ctaForm.querySelector('[name="message"]').value;
+      const subject = encodeURIComponent('Dekorem Web Sitesi - ' + name);
+      const body    = encodeURIComponent(
+        'Ad Soyad: ' + name + '\n' +
+        'Telefon: ' + phone + '\n' +
+        'E-posta: ' + email + '\n\n' +
+        'Mesaj:\n' + message
+      );
+      window.location.href = 'mailto:victor@dekorem.com.tr?subject=' + subject + '&body=' + body;
+      ctaForm.style.display = 'none';
+      document.getElementById('cta-sent').style.display = 'block';
     });
   }
 </script>
