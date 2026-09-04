@@ -650,13 +650,16 @@ document.querySelectorAll('.thickness-btn').forEach(btn=>{
 // Main category tabs
 document.querySelectorAll('.main-cat-btn').forEach(btn=>{
   btn.addEventListener('click',()=>{
+    const isActive=btn.classList.contains('active');
     document.querySelectorAll('.main-cat-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const cat=btn.dataset.maincat;
-    document.getElementById('maincat-pvc').style.display=cat==='pvc'?'block':'none';
-    ['silikon','tutkal','kaidex'].forEach(c=>{
-      document.getElementById('maincat-'+c).style.display=cat===c?'block':'none';
-    });
+    document.getElementById('maincat-pvc').style.display='none';
+    ['silikon','tutkal','kaidex'].forEach(c=>{document.getElementById('maincat-'+c).style.display='none';});
+    if(!isActive){
+      btn.classList.add('active');
+      const cat=btn.dataset.maincat;
+      document.getElementById('maincat-pvc').style.display=cat==='pvc'?'block':'none';
+      ['silikon','tutkal','kaidex'].forEach(c=>{document.getElementById('maincat-'+c).style.display=cat===c?'block':'none';});
+    }
   });
 });
 
