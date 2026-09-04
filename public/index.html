@@ -497,9 +497,8 @@
 
   /* ========== CATEGORIES ========== */
   .cat-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr);
+    display: grid; grid-template-columns: repeat(3, 1fr);
     gap: 1.2rem; max-width: 1200px; margin: 3rem auto 0;
-    align-items: start;
   }
   .cat {
     padding: 2.2rem; background: var(--white);
@@ -524,15 +523,6 @@
   .cat:hover .cat-n { color: rgba(232,117,42,0.3); }
   .cat h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--navy); }
   .cat p { font-size: 0.82rem; color: var(--text-soft); line-height: 1.6; }
-  .cat-header { display: flex; justify-content: space-between; align-items: flex-start; }
-  .cat-chevron { font-size: 1rem; color: var(--orange); transition: transform 0.35s; flex-shrink: 0; margin-top: 0.15rem; }
-  .cat.open .cat-chevron { transform: rotate(90deg); }
-  .cat-sub { display: none; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
-  .cat.open .cat-sub { display: block; }
-  .cat-sub-item { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0; font-size: 0.8rem; font-weight: 500; color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--border); transition: color 0.3s; }
-  .cat-sub-item:last-child { border-bottom: none; }
-  .cat-sub-item:hover { color: var(--orange); }
-  .cat-sub-item .arr { opacity: 0.35; font-size: 0.75rem; }
 
   /* ========== WHY US ========== */
   .why { background: var(--navy-dark); color: var(--white); }
@@ -810,23 +800,12 @@
     <h2 class="s-title">Uzmanlık Alanlarımız</h2>
   </div>
   <div class="cat-grid">
-    <div class="cat reveal cat-toggle" role="button" tabindex="0">
-      <div class="cat-n">01</div>
-      <div class="cat-header">
-        <h3>PVC Folyoları</h3>
-        <span class="cat-chevron">›</span>
-      </div>
-      <p>Mobilya, mutfak ve dekorasyon yüzeyleri için geniş renk ve desen yelpazesi.</p>
-      <div class="cat-sub">
-        <a href="urunler.html#section-040" class="cat-sub-item"><span>0,40 mm Ahşap &amp; Desenler</span><span class="arr">→</span></a>
-        <a href="urunler.html#section-020" class="cat-sub-item"><span>0,20 mm Folyolar</span><span class="arr">→</span></a>
-        <a href="urunler.html#section-pp018" class="cat-sub-item"><span>PP 0,18 mm</span><span class="arr">→</span></a>
-        <a href="urunler.html#section-pvcpet" class="cat-sub-item"><span>PVC / PET</span><span class="arr">→</span></a>
-      </div>
-    </div>
-    <div class="cat reveal"><div class="cat-n">02</div><h3>Silikon Membran Lastiği</h3><p>Membran pres makineleri için yüksek ısı dayanımlı, uzun ömürlü silikon lastiği.</p></div>
-    <div class="cat reveal"><div class="cat-n">03</div><h3>Tutkal</h3><p>PVC ve PET folyolar için özel formüle edilmiş, güçlü yapışma performanslı tutkallar.</p></div>
-    <div class="cat reveal"><div class="cat-n">04</div><h3>Kaidex</h3><p>Termoform ve vakum uygulamalarında kullanılan yüksek performanslı Kaidex levhalar.</p></div>
+    <a href="/ahsap-desenler.html" class="cat reveal"><div class="cat-n">01</div><h3>Ahşap Desenler</h3><p>Doğal ahşap görünümlü, 40'tan fazla desen seçeneği ile mekanlarınıza sıcaklık katın.</p></a>
+    <a href="/high-gloss.html" class="cat reveal"><div class="cat-n">02</div><h3>High Gloss & Elit HG</h3><p>Tam çizilmez parlak yüzeyler. 2D düz panel ve 3D membran uygulamalarında dünya kalitesi.</p></a>
+    <a href="/super-mat.html" class="cat reveal"><div class="cat-n">03</div><h3>Süper Mat Desenler</h3><p>Zarif mat dokular ile modern ve sofistike bir görünüm elde edin.</p></a>
+    <a href="/duz-renkler.html" class="cat reveal"><div class="cat-n">04</div><h3>Düz Renkler</h3><p>Sade ve şık tek renk folyolar ile minimalist tasarımlar oluşturun.</p></a>
+    <a href="/pet-g-laminasyon.html" class="cat reveal"><div class="cat-n">05</div><h3>PET-G Laminasyon</h3><p>Düz laminasyon uygulamaları için yüksek performanslı PET-G folyolar.</p></a>
+    <a href="/alman-folyolari.html" class="cat reveal"><div class="cat-n">06</div><h3>Alman Folyoları</h3><p>Almanya'nın önde gelen üreticilerinden ithal edilen premium kalite folyolar.</p></a>
   </div>
 </section>
 
@@ -909,7 +888,6 @@
   });
   const obs=new IntersectionObserver(e=>e.forEach((en,i)=>{if(en.isIntersecting){setTimeout(()=>en.target.classList.add('visible'),i*60);obs.unobserve(en.target)}}),{threshold:0.1});
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-  document.querySelectorAll('.cat-toggle').forEach(el=>{el.addEventListener('click',()=>el.classList.toggle('open'));el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.classList.toggle('open')}})});
   document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'})}));
   // Kartela
   let kPage=0; const kTotal=5;
