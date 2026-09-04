@@ -616,6 +616,22 @@ document.querySelectorAll('.thickness-btn').forEach(btn=>{
 });
 
 
+// Open section from URL hash (e.g. #section-020 from home page links)
+(function(){
+  const map={'section-040':'040','section-020':'020','section-pp018':'pp018','section-pvcpet':'pvcpet'};
+  const hash=location.hash.replace('#','');
+  if(map[hash]){
+    const t=map[hash];
+    document.querySelectorAll('.thickness-btn').forEach(b=>{b.classList.toggle('active',b.dataset.thickness===t)});
+    document.getElementById('section-040').style.display=t==='040'?'':'none';
+    document.getElementById('section-020').style.display=t==='020'?'block':'none';
+    document.getElementById('section-pp018').style.display=t==='pp018'?'block':'none';
+    document.getElementById('section-pvcpet').style.display=t==='pvcpet'?'block':'none';
+    document.querySelector('.thickness-tabs').classList.toggle('dark-mode',t==='pvcpet');
+    setTimeout(()=>document.getElementById(hash)?.scrollIntoView({behavior:'smooth',block:'start'}),300);
+  }
+})();
+
 // 0.20mm category filter
 document.querySelectorAll('.filter-btn-020').forEach(btn=>{
   btn.addEventListener('click',()=>{
