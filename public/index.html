@@ -43,8 +43,7 @@
     transition: opacity 0.6s ease, visibility 0.6s ease;
   }
   .loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-  .loader .logo { display: flex; align-items: center; justify-content: center; }
-  .loader .logo img { height: clamp(120px, 20vw, 220px); width: auto; display: block; animation: logoReveal 0.9s cubic-bezier(0.16,1,0.3,1) forwards; }
+  .loader-logo { height: clamp(120px, 20vw, 220px); width: auto; animation: logoReveal 0.9s cubic-bezier(0.16,1,0.3,1) forwards; }
   @keyframes logoReveal {
     0%   { opacity: 0; transform: translateY(32px) scale(0.92); filter: blur(6px); }
     70%  { opacity: 1; transform: translateY(-4px) scale(1.02); filter: blur(0); }
@@ -652,7 +651,7 @@
 <body>
 
 <div class="loader" id="loader">
-  <span class="logo"><img src="images/logo-white.svg" alt="Dekorem"></span>
+  <img src="images/logo-white.svg" alt="Dekorem" class="loader-logo">
 </div>
 
 <nav id="nav">
