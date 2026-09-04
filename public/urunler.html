@@ -38,7 +38,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0.9rem 5%;display:f
 
 /* PRODUCT CONTENT AREA */
 .product-content-area{max-width:1440px;margin:0 auto;width:100%;padding:0 5%}
-#section-pvcpet{margin-left:-5%;margin-right:-5%;width:calc(100% + 10%)}
+#section-pvcpet{margin-left:-5%;margin-right:-5%;width:calc(100% + 10%);margin-top:-160px;position:relative;z-index:2}
 
 /* PVC CARD BG IMAGE */
 .cat-card[data-maincat="pvc"]{background:linear-gradient(to top,rgba(8,14,28,0.92) 0%,rgba(10,18,34,0.62) 55%,rgba(8,14,28,0.38) 100%),url('images/urunler/1c84d6eb-6657-43ce-89b2-1b2655bb53c3.png') center/cover no-repeat}
@@ -595,7 +595,7 @@ footer{margin-top:auto;background:#060c18;border-top:1px solid rgba(255,255,255,
 
 <div id="section-pvcpet" style="display:none">
   <style>
-    .pvcpet-banner{position:relative;height:100vh;overflow:hidden}
+    .pvcpet-banner{position:relative;height:80vh;overflow:hidden}
     .pvcpet-banner img{width:100%;height:100%;object-fit:cover;object-position:center}
     .pvcpet-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(11,21,40,0.82) 40%,rgba(11,21,40,0.2) 100%)}
     .pvcpet-banner-text{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;padding:0 8%}
@@ -604,7 +604,7 @@ footer{margin-top:auto;background:#060c18;border-top:1px solid rgba(255,255,255,
     .pvcpet-banner-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,4.2rem);font-weight:300;color:#fff;line-height:1.1;margin-bottom:1.2rem}
     .pvcpet-banner-text p{color:rgba(255,255,255,0.6);font-size:0.92rem;line-height:1.8;max-width:460px}
     .pvcpet-photos{display:grid;grid-template-columns:1fr 1fr;gap:0}
-    .pvcpet-photo{position:relative;overflow:hidden;height:420px}
+    .pvcpet-photo{position:relative;overflow:hidden;height:560px}
     .pvcpet-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s}
     .pvcpet-photo:hover img{transform:scale(1.04)}
     .pvcpet-photo-label{position:absolute;bottom:0;left:0;right:0;padding:2rem;background:linear-gradient(transparent,rgba(11,21,40,0.75));color:#fff}
