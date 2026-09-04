@@ -25,19 +25,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0.9rem 5%;display:f
 
 /* CATEGORY CARDS */
 .cat-cards-section{padding:2.8rem 5% 0;max-width:1440px;margin:0 auto;width:100%}
-.cat-cards-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(255,255,255,0.07);border-radius:5px;overflow:hidden}
-.cat-card{cursor:pointer;background:#0b1320;position:relative;border-right:1px solid rgba(255,255,255,0.07);transition:background 0.4s;display:flex;flex-direction:column;justify-content:space-between;padding:2.4rem 2rem 2rem;min-height:270px;overflow:hidden}
-.cat-card:last-child{border-right:none}
-.cat-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--orange);transform:scaleY(0);transform-origin:bottom;transition:transform 0.4s cubic-bezier(0.16,1,0.3,1)}
-.cat-card:hover{background:#0e1928}
-.cat-card:hover::before{transform:scaleY(1)}
-.cat-card.active{background:#0e1928}
-.cat-card.active::before{transform:scaleY(1)}
-.cat-card-num{font-size:0.58rem;letter-spacing:0.35em;color:rgba(255,255,255,0.18);font-weight:500;font-family:'DM Sans',sans-serif}
-.cat-card-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1.55rem,2.2vw,2.1rem);font-weight:300;font-style:italic;color:rgba(255,255,255,0.78);line-height:1.18;transition:color 0.3s;margin-top:auto;padding-top:1.2rem}
-.cat-card:hover .cat-card-name,.cat-card.active .cat-card-name{color:var(--white)}
-.cat-card-arrow{align-self:flex-end;color:var(--orange);font-size:1.15rem;line-height:1;transition:transform 0.35s cubic-bezier(0.16,1,0.3,1);display:inline-block;margin-top:1.4rem}
-.cat-card:hover .cat-card-arrow{transform:translateX(6px)}
+.cat-cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+.cat-card{cursor:pointer;background:linear-gradient(145deg,#B84A18 0%,#D4651E 55%,#E07830 100%);position:relative;border-radius:22px;transition:transform 0.35s cubic-bezier(0.16,1,0.3,1),box-shadow 0.35s;display:flex;flex-direction:column;justify-content:space-between;padding:2.4rem 2rem 2rem;min-height:280px;overflow:hidden;box-shadow:0 8px 32px rgba(180,70,20,0.25)}
+.cat-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.08) 0%,transparent 60%);border-radius:22px;pointer-events:none}
+.cat-card:hover{transform:translateY(-5px);box-shadow:0 20px 52px rgba(180,70,20,0.45)}
+.cat-card.active{transform:translateY(-5px);box-shadow:0 20px 52px rgba(180,70,20,0.45)}
+.cat-card-num{font-size:0.58rem;letter-spacing:0.38em;color:rgba(255,255,255,0.38);font-weight:600;font-family:'DM Sans',sans-serif;text-transform:uppercase}
+.cat-card-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,2.6vw,2.6rem);font-weight:600;font-style:italic;color:#fff;line-height:1.12;margin-top:auto;padding-top:1.2rem}
+.cat-card-arrow{align-self:flex-end;color:rgba(255,255,255,0.75);font-size:1.25rem;line-height:1;transition:transform 0.35s cubic-bezier(0.16,1,0.3,1);display:inline-block;margin-top:1.4rem}
+.cat-card:hover .cat-card-arrow{transform:translateX(7px)}
 .cat-card.active .cat-card-arrow{transform:rotate(90deg)}
 
 /* PRODUCT CONTENT AREA */
