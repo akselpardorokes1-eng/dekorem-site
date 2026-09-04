@@ -502,13 +502,26 @@
   .view-all a:hover { background: var(--navy); color: var(--white); }
 
   /* ========== CATEGORIES ========== */
+  #categories {
+    position: relative;
+    background: url('images/b04f2482-7db4-4682-8e61-97f053732cda.png') center/cover no-repeat;
+  }
+  #categories::before {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(8, 14, 28, 0.72);
+    pointer-events: none;
+  }
+  #categories .reveal, #categories .cat-grid { position: relative; z-index: 1; }
+  #categories .s-tag { color: var(--orange-light); }
+  #categories .s-title { color: var(--white); }
   .cat-grid {
     display: grid; grid-template-columns: repeat(3, 1fr);
     gap: 1.2rem; max-width: 1200px; margin: 3rem auto 0;
   }
   .cat {
-    padding: 2.2rem; background: var(--white);
-    border: 1px solid var(--border);
+    padding: 2.2rem; background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
     transition: all 0.4s; cursor: pointer;
     position: relative; overflow: hidden;
     display: block; text-decoration: none; color: inherit;
@@ -519,16 +532,16 @@
     transition: height 0.4s;
   }
   .cat:hover::before { height: 100%; }
-  .cat:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .cat:hover { transform: translateY(-4px); background: rgba(255,255,255,0.1); box-shadow: 0 8px 40px rgba(0,0,0,0.3); }
   .cat-n {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2.2rem; font-weight: 300;
-    color: rgba(27,46,92,0.06); margin-bottom: 0.8rem;
+    color: rgba(255,255,255,0.08); margin-bottom: 0.8rem;
     transition: color 0.4s;
   }
-  .cat:hover .cat-n { color: rgba(232,117,42,0.3); }
-  .cat h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--navy); }
-  .cat p { font-size: 0.82rem; color: var(--text-soft); line-height: 1.6; }
+  .cat:hover .cat-n { color: rgba(232,117,42,0.4); }
+  .cat h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; color: rgba(255,255,255,0.9); }
+  .cat p { font-size: 0.82rem; color: rgba(255,255,255,0.45); line-height: 1.6; }
 
   /* ========== WHY US ========== */
   .why { background: var(--navy-dark); color: var(--white); }
