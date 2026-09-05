@@ -653,58 +653,74 @@ footer{margin-top:auto;background:#060c18;border-top:1px solid rgba(255,255,255,
     <img src="images/urunler/tutkal/34a05a57-89dd-4a6d-9d72-ba464633f0fd.png" alt="Tutkal" style="position:absolute;top:0;right:0;width:55%;height:100%;object-fit:cover;display:block;-webkit-mask-image:linear-gradient(to left,black 60%,transparent 100%);mask-image:linear-gradient(to left,black 60%,transparent 100%)">
   </div>
 </div>
+<style>
+#kydex-grid{display:grid;grid-template-columns:1fr 1fr 1fr;height:100vh;transition:grid-template-columns 0.65s cubic-bezier(0.16,1,0.3,1)}
+.kydex-panel{position:relative;overflow:hidden;cursor:pointer}
+.kydex-panel img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.65s cubic-bezier(0.16,1,0.3,1)}
+.kydex-panel .kp-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,14,28,0.8) 0%,rgba(8,14,28,0.25) 50%,rgba(8,14,28,0.1) 100%);pointer-events:none;transition:background 0.5s}
+.kydex-panel .kp-label{position:absolute;bottom:2.5rem;left:0;right:0;text-align:center;pointer-events:none;transition:opacity 0.4s}
+.kydex-panel .kp-tag{font-size:0.6rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--orange);font-family:'DM Sans',sans-serif;margin-bottom:0.5rem}
+.kydex-panel .kp-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:300;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,0.6);transition:font-size 0.5s}
+#kydex-grid.has-active .kydex-panel:not(.kp-active) .kp-overlay{background:rgba(8,14,28,0.55)}
+#kydex-grid.has-active .kydex-panel.kp-active img{transform:scale(1.04)}
+#kydex-grid.has-active .kydex-panel.kp-active .kp-title{font-size:clamp(2rem,3vw,3rem)}
+</style>
+
 <div id="maincat-kaidex" style="display:none;margin-left:-5%;margin-right:-5%;width:calc(100% + 10%)">
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;height:100vh">
+  <div id="kydex-grid">
 
-    <div class="kydex-panel" onclick="openKydexLightbox(this)" style="position:relative;overflow:hidden;cursor:zoom-in">
-      <img src="images/urunler/kydex/silah-kilifi/1e2f8498-71df-45d3-a025-53a948ce25cd.png" alt="Silah Kılıfı" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s">
-      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(8,14,28,0.75) 0%,rgba(8,14,28,0.1) 60%,transparent 100%);pointer-events:none"></div>
-      <div style="position:absolute;bottom:2.5rem;left:0;right:0;text-align:center;pointer-events:none">
-        <p style="font-size:0.6rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--orange);font-family:'DM Sans',sans-serif;margin-bottom:0.5rem">Kydex</p>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:300;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,0.6)">Silah Kılıfı</h3>
+    <div class="kydex-panel" onclick="kydexExpand(this,0)">
+      <img src="images/urunler/kydex/silah-kilifi/1e2f8498-71df-45d3-a025-53a948ce25cd.png" alt="Silah Kılıfı">
+      <div class="kp-overlay"></div>
+      <div class="kp-label">
+        <p class="kp-tag">Kydex</p>
+        <h3 class="kp-title">Silah Kılıfı</h3>
       </div>
     </div>
 
-    <div class="kydex-panel" onclick="openKydexLightbox(this)" style="position:relative;overflow:hidden;cursor:zoom-in">
-      <img src="images/urunler/kydex/tibbi-cihazlar/966a2d9e-72b1-4b11-b493-9b4a5228ab88.png" alt="Tıbbi Cihazlar" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s">
-      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(8,14,28,0.75) 0%,rgba(8,14,28,0.1) 60%,transparent 100%);pointer-events:none"></div>
-      <div style="position:absolute;bottom:2.5rem;left:0;right:0;text-align:center;pointer-events:none">
-        <p style="font-size:0.6rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--orange);font-family:'DM Sans',sans-serif;margin-bottom:0.5rem">Kydex</p>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:300;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,0.6)">Tıbbi Cihazlar</h3>
+    <div class="kydex-panel" onclick="kydexExpand(this,1)">
+      <img src="images/urunler/kydex/tibbi-cihazlar/966a2d9e-72b1-4b11-b493-9b4a5228ab88.png" alt="Tıbbi Cihazlar">
+      <div class="kp-overlay"></div>
+      <div class="kp-label">
+        <p class="kp-tag">Kydex</p>
+        <h3 class="kp-title">Tıbbi Cihazlar</h3>
       </div>
     </div>
 
-    <div class="kydex-panel" onclick="openKydexLightbox(this)" style="position:relative;overflow:hidden;cursor:zoom-in">
-      <img src="images/urunler/kydex/ucak-koltuklari/36f25893-6778-493b-9a3d-ebd56c17166b.png" alt="Uçak Koltukları" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s">
-      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(8,14,28,0.75) 0%,rgba(8,14,28,0.1) 60%,transparent 100%);pointer-events:none"></div>
-      <div style="position:absolute;bottom:2.5rem;left:0;right:0;text-align:center;pointer-events:none">
-        <p style="font-size:0.6rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--orange);font-family:'DM Sans',sans-serif;margin-bottom:0.5rem">Kydex</p>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:300;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,0.6)">Uçak Koltukları</h3>
+    <div class="kydex-panel" onclick="kydexExpand(this,2)">
+      <img src="images/urunler/kydex/ucak-koltuklari/36f25893-6778-493b-9a3d-ebd56c17166b.png" alt="Uçak Koltukları">
+      <div class="kp-overlay"></div>
+      <div class="kp-label">
+        <p class="kp-tag">Kydex</p>
+        <h3 class="kp-title">Uçak Koltukları</h3>
       </div>
     </div>
 
-  </div>
-
-  <!-- Lightbox -->
-  <div id="kydex-lightbox" onclick="closeKydexLightbox()" style="display:none;position:fixed;inset:0;z-index:9000;background:rgba(8,14,28,0.96);cursor:zoom-out;align-items:center;justify-content:center">
-    <img id="kydex-lightbox-img" src="" alt="" style="max-width:90vw;max-height:90vh;object-fit:contain;border-radius:8px;box-shadow:0 24px 80px rgba(0,0,0,0.7)">
-    <button onclick="closeKydexLightbox()" style="position:absolute;top:1.5rem;right:1.5rem;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;width:44px;height:44px;border-radius:50%;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center">✕</button>
   </div>
 </div>
 
 <script>
-function openKydexLightbox(panel){
-  var img=panel.querySelector('img');
-  var lb=document.getElementById('kydex-lightbox');
-  document.getElementById('kydex-lightbox-img').src=img.src;
-  lb.style.display='flex';
-  document.body.style.overflow='hidden';
-}
-function closeKydexLightbox(){
-  document.getElementById('kydex-lightbox').style.display='none';
-  document.body.style.overflow='';
-}
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeKydexLightbox();});
+(function(){
+  var cols=['1fr','1fr','1fr'];
+  var active=-1;
+  window.kydexExpand=function(panel,idx){
+    var grid=document.getElementById('kydex-grid');
+    var panels=grid.querySelectorAll('.kydex-panel');
+    if(active===idx){
+      active=-1;
+      grid.style.gridTemplateColumns='1fr 1fr 1fr';
+      grid.classList.remove('has-active');
+      panels.forEach(function(p){p.classList.remove('kp-active');});
+    } else {
+      active=idx;
+      var c=['0.22fr','0.22fr','0.22fr'];
+      c[idx]='3.56fr';
+      grid.style.gridTemplateColumns=c.join(' ');
+      grid.classList.add('has-active');
+      panels.forEach(function(p,i){p.classList.toggle('kp-active',i===idx);});
+    }
+  };
+})();
 </script>
 </div>
 
