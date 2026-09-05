@@ -669,13 +669,21 @@ footer{margin-top:auto;background:#060c18;border-top:1px solid rgba(255,255,255,
 #kydex-grid.has-active .kydex-panel.kp-active img{object-fit:contain;filter:brightness(1)}
 #kydex-grid.has-active .kydex-panel.kp-active .kp-overlay{opacity:0}
 #kydex-grid.has-active .kydex-panel.kp-active .kp-title{font-size:clamp(2rem,3vw,3rem)}
+#kydex-grid.has-active .kydex-panel.kp-active .kp-cover{opacity:0}
+#kydex-grid.has-active .kydex-panel.kp-active .kp-duo{opacity:1;pointer-events:auto}
 </style>
 
 <div id="maincat-kaidex" style="display:none;margin-left:-5%;margin-right:-5%;width:calc(100% + 10%)">
   <div id="kydex-grid">
 
     <div class="kydex-panel" onclick="kydexExpand(this,0)">
-      <img src="images/urunler/kydex/silah-kilifi/1e2f8498-71df-45d3-a025-53a948ce25cd.png" alt="Silah Kılıfı">
+      <!-- Kapanıkken tek fotoğraf -->
+      <img class="kp-cover" src="images/urunler/kydex/silah-kilifi/1e2f8498-71df-45d3-a025-53a948ce25cd.png" alt="Silah Kılıfı" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 0.14s ease">
+      <!-- Açıkken ikili görünüm -->
+      <div class="kp-duo" style="position:absolute;inset:0;display:flex;opacity:0;transition:opacity 0.14s ease;pointer-events:none">
+        <img src="images/urunler/kydex/silah-kilifi/1e2f8498-71df-45d3-a025-53a948ce25cd.png" alt="Silah Kılıfı 1" style="width:50%;height:100%;object-fit:contain;background:#0B1528">
+        <img src="images/urunler/kydex/silah-kilifi/WhatsApp Image 2026-09-03 at 13.35.05.jpeg" alt="Silah Kılıfı 2" style="width:50%;height:100%;object-fit:contain;background:#0B1528">
+      </div>
       <div class="kp-overlay"></div>
       <div class="kp-label">
         <p class="kp-tag">Kydex</p>
