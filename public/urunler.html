@@ -656,35 +656,56 @@ footer{margin-top:auto;background:#060c18;border-top:1px solid rgba(255,255,255,
 <div id="maincat-kaidex" style="display:none;margin-left:-5%;margin-right:-5%;width:calc(100% + 10%)">
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;height:100vh">
 
-    <div style="position:relative;overflow:hidden">
+    <div class="kydex-panel" onclick="openKydexLightbox(this)" style="position:relative;overflow:hidden;cursor:zoom-in">
       <img src="images/urunler/kydex/silah-kilifi/1e2f8498-71df-45d3-a025-53a948ce25cd.png" alt="Silah Kılıfı" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s">
-      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(8,14,28,0.75) 0%,rgba(8,14,28,0.1) 60%,transparent 100%)"></div>
-      <div style="position:absolute;bottom:2.5rem;left:0;right:0;text-align:center">
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(8,14,28,0.75) 0%,rgba(8,14,28,0.1) 60%,transparent 100%);pointer-events:none"></div>
+      <div style="position:absolute;bottom:2.5rem;left:0;right:0;text-align:center;pointer-events:none">
         <p style="font-size:0.6rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--orange);font-family:'DM Sans',sans-serif;margin-bottom:0.5rem">Kydex</p>
         <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:300;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,0.6)">Silah Kılıfı</h3>
       </div>
     </div>
 
-    <div style="position:relative;overflow:hidden">
+    <div class="kydex-panel" onclick="openKydexLightbox(this)" style="position:relative;overflow:hidden;cursor:zoom-in">
       <img src="images/urunler/kydex/tibbi-cihazlar/966a2d9e-72b1-4b11-b493-9b4a5228ab88.png" alt="Tıbbi Cihazlar" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s">
-      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(8,14,28,0.75) 0%,rgba(8,14,28,0.1) 60%,transparent 100%)"></div>
-      <div style="position:absolute;bottom:2.5rem;left:0;right:0;text-align:center">
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(8,14,28,0.75) 0%,rgba(8,14,28,0.1) 60%,transparent 100%);pointer-events:none"></div>
+      <div style="position:absolute;bottom:2.5rem;left:0;right:0;text-align:center;pointer-events:none">
         <p style="font-size:0.6rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--orange);font-family:'DM Sans',sans-serif;margin-bottom:0.5rem">Kydex</p>
         <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:300;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,0.6)">Tıbbi Cihazlar</h3>
       </div>
     </div>
 
-    <div style="position:relative;overflow:hidden">
+    <div class="kydex-panel" onclick="openKydexLightbox(this)" style="position:relative;overflow:hidden;cursor:zoom-in">
       <img src="images/urunler/kydex/ucak-koltuklari/36f25893-6778-493b-9a3d-ebd56c17166b.png" alt="Uçak Koltukları" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s">
-      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(8,14,28,0.75) 0%,rgba(8,14,28,0.1) 60%,transparent 100%)"></div>
-      <div style="position:absolute;bottom:2.5rem;left:0;right:0;text-align:center">
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(8,14,28,0.75) 0%,rgba(8,14,28,0.1) 60%,transparent 100%);pointer-events:none"></div>
+      <div style="position:absolute;bottom:2.5rem;left:0;right:0;text-align:center;pointer-events:none">
         <p style="font-size:0.6rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--orange);font-family:'DM Sans',sans-serif;margin-bottom:0.5rem">Kydex</p>
         <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:300;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,0.6)">Uçak Koltukları</h3>
       </div>
     </div>
 
   </div>
+
+  <!-- Lightbox -->
+  <div id="kydex-lightbox" onclick="closeKydexLightbox()" style="display:none;position:fixed;inset:0;z-index:9000;background:rgba(8,14,28,0.96);cursor:zoom-out;align-items:center;justify-content:center">
+    <img id="kydex-lightbox-img" src="" alt="" style="max-width:90vw;max-height:90vh;object-fit:contain;border-radius:8px;box-shadow:0 24px 80px rgba(0,0,0,0.7)">
+    <button onclick="closeKydexLightbox()" style="position:absolute;top:1.5rem;right:1.5rem;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;width:44px;height:44px;border-radius:50%;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center">✕</button>
+  </div>
 </div>
+
+<script>
+function openKydexLightbox(panel){
+  var img=panel.querySelector('img');
+  var lb=document.getElementById('kydex-lightbox');
+  document.getElementById('kydex-lightbox-img').src=img.src;
+  lb.style.display='flex';
+  document.body.style.overflow='hidden';
+}
+function closeKydexLightbox(){
+  document.getElementById('kydex-lightbox').style.display='none';
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeKydexLightbox();});
+</script>
 </div>
 
 <footer>
