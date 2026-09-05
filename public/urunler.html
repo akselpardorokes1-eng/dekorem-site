@@ -654,11 +654,12 @@ footer{margin-top:auto;background:#060c18;border-top:1px solid rgba(255,255,255,
   </div>
 </div>
 <style>
-#kydex-grid{display:grid;grid-template-columns:1fr 1fr 1fr;height:100vh;transition:grid-template-columns 0.32s cubic-bezier(0.4,0,0.2,1)}
-.kydex-panel{position:relative;overflow:hidden;cursor:pointer;background:#0B1528}
-.kydex-panel img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.32s cubic-bezier(0.4,0,0.2,1),filter 0.25s ease}
-.kydex-panel .kp-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,14,28,0.8) 0%,rgba(8,14,28,0.25) 50%,rgba(8,14,28,0.1) 100%);pointer-events:none;transition:opacity 0.25s ease}
-.kydex-panel .kp-label{position:absolute;bottom:2.5rem;left:0;right:0;text-align:center;pointer-events:none;transition:opacity 0.2s ease,transform 0.32s cubic-bezier(0.4,0,0.2,1)}
+#kydex-grid{display:flex;height:100vh}
+.kydex-panel{position:relative;overflow:hidden;cursor:pointer;background:#0B1528;flex:1 1 0;transition:flex-grow 0.28s cubic-bezier(0.4,0,0.2,1)}
+.kydex-panel.kp-active{flex-grow:4}
+.kydex-panel img{width:100%;height:100%;object-fit:cover;display:block;transition:filter 0.22s ease}
+.kydex-panel .kp-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,14,28,0.8) 0%,rgba(8,14,28,0.25) 50%,rgba(8,14,28,0.1) 100%);pointer-events:none;transition:opacity 0.22s ease}
+.kydex-panel .kp-label{position:absolute;bottom:2.5rem;left:0;right:0;text-align:center;pointer-events:none;transition:opacity 0.18s ease}
 .kydex-panel .kp-tag{font-size:0.6rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--orange);font-family:'DM Sans',sans-serif;margin-bottom:0.5rem}
 .kydex-panel .kp-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:300;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,0.6)}
 #kydex-grid.has-active .kydex-panel:not(.kp-active){cursor:pointer}
@@ -705,21 +706,16 @@ footer{margin-top:auto;background:#060c18;border-top:1px solid rgba(255,255,255,
 
 <script>
 (function(){
-  var cols=['1fr','1fr','1fr'];
   var active=-1;
   window.kydexExpand=function(panel,idx){
     var grid=document.getElementById('kydex-grid');
     var panels=grid.querySelectorAll('.kydex-panel');
     if(active===idx){
       active=-1;
-      grid.style.gridTemplateColumns='1fr 1fr 1fr';
       grid.classList.remove('has-active');
       panels.forEach(function(p){p.classList.remove('kp-active');});
     } else {
       active=idx;
-      var c=['0.22fr','0.22fr','0.22fr'];
-      c[idx]='3.56fr';
-      grid.style.gridTemplateColumns=c.join(' ');
       grid.classList.add('has-active');
       panels.forEach(function(p,i){p.classList.toggle('kp-active',i===idx);});
     }
