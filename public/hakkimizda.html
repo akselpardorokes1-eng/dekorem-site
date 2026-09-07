@@ -21,7 +21,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0.9rem 5%;display:f
 .page-hero h1 em{font-style:italic;color:var(--orange)}
 .page-hero-sub{font-size:0.88rem;color:rgba(255,255,255,0.38);max-width:520px;margin:0 auto;line-height:1.8}
 
-.story-section{padding:5rem 5%;max-width:880px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start}
+.story-section{padding:5rem 5%;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start}
 .story-label{font-size:0.58rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--orange);font-weight:600;padding-top:0.4rem}
 .story-text{color:rgba(255,255,255,0.55);font-size:0.95rem;line-height:1.9;font-family:'Cormorant Garamond',serif;font-weight:300}
 .story-text strong{color:rgba(255,255,255,0.9);font-weight:400}
@@ -60,7 +60,7 @@ footer{margin-top:auto;background:#060c18;border-top:1px solid rgba(255,255,255,
 .reveal{opacity:0;transform:translateY(18px);transition:all 0.55s cubic-bezier(0.16,1,0.3,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
-@media(max-width:900px){.story-section{grid-template-columns:1fr}.stats-strip{grid-template-columns:repeat(2,1fr)}.stat-item{border-bottom:1px solid rgba(255,255,255,0.06)}}
+@media(max-width:900px){.story-section{grid-template-columns:1fr}.story-section>div>div[style]{grid-template-columns:1fr!important}.stats-strip{grid-template-columns:repeat(2,1fr)}.stat-item{border-bottom:1px solid rgba(255,255,255,0.06)}}
 @media(max-width:768px){.why-grid{grid-template-columns:1fr 1fr}.nav-links{display:none}.footer-inner{flex-direction:column}.footer-contact-col{text-align:left}}
 @media(max-width:480px){.why-grid{grid-template-columns:1fr}}
 </style></head><body>
@@ -106,17 +106,16 @@ footer{margin-top:auto;background:#060c18;border-top:1px solid rgba(255,255,255,
 
 <div class="story-section reveal">
   <div class="story-label">Hikayemiz</div>
-  <div class="story-text">
-    <p><strong>1995 yılında İstanbul'da kurulan Dekorem</strong>, PVC kaplama sektöründe Türkiye'de ilk servis veren firma olarak sektöre yön vermektedir.</p>
-    <br>
-    <p>Almanya ve Kore başta olmak üzere dünya liderlerinden temin edilen ürünlerle müşterilerine çözüm ortağı olmayı ilke edinmiş olan şirketimiz, 28 ülkeye ihracat yaparak global bir tedarik ağı oluşturmuştur.</p>
-    <br>
-    <p>Mobilyadan otomotife, mimari uygulamalardan endüstriyel çözümlere kadar geniş bir yelpazede hizmet sunmakta; sürdürülebilir ve çevreci üretim anlayışıyla geleceğe yatırım yapmaktayız.</p>
+  <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:2.5rem;align-items:start">
+    <img src="images/hikaye-foto.png" alt="Dekorem" style="width:100%;border-radius:12px;object-fit:cover;max-height:420px;display:block;opacity:0.9">
+    <div class="story-text">
+      <p><strong>1995 yılında İstanbul'da kurulan Dekorem</strong>, PVC kaplama sektöründe Türkiye'de ilk servis veren firma olarak sektöre yön vermektedir.</p>
+      <br>
+      <p>Almanya ve Kore başta olmak üzere dünya liderlerinden temin edilen ürünlerle müşterilerine çözüm ortağı olmayı ilke edinmiş olan şirketimiz, 28 ülkeye ihracat yaparak global bir tedarik ağı oluşturmuştur.</p>
+      <br>
+      <p>Mobilyadan otomotife, mimari uygulamalardan endüstriyel çözümlere kadar geniş bir yelpazede hizmet sunmakta; sürdürülebilir ve çevreci üretim anlayışıyla geleceğe yatırım yapmaktayız.</p>
+    </div>
   </div>
-</div>
-
-<div class="reveal" style="max-width:1100px;margin:0 auto 5rem;padding:0 5%">
-  <img src="images/hikaye-foto.png" alt="Dekorem" style="width:100%;border-radius:16px;object-fit:cover;max-height:520px;display:block;opacity:0.9">
 </div>
 
 <section class="cards-section">
