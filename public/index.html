@@ -208,23 +208,45 @@
   /* ========== STATS ========== */
   .stats {
     display: grid; grid-template-columns: repeat(4, 1fr);
-    background: var(--navy); max-width: 1200px;
-    margin: 0 auto; position: relative; z-index: 10;
+    background: var(--navy-deep);
+    position: relative; z-index: 10;
   }
   .stat {
-    padding: 3rem 2rem; text-align: center;
-    border-right: 1px solid rgba(255,255,255,0.06);
+    padding: 4.5rem 3.5rem 4rem;
+    border-left: 1px solid rgba(255,255,255,0.06);
+    position: relative; overflow: hidden;
   }
-  .stat:last-child { border-right: none; }
+  .stat:last-child { border-right: 1px solid rgba(255,255,255,0.06); }
+  .stat-ghost {
+    position: absolute; top: -0.5rem; right: -0.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(6rem, 9vw, 10rem);
+    font-weight: 300; line-height: 1;
+    color: rgba(255,255,255,0.04);
+    pointer-events: none; user-select: none;
+    letter-spacing: -0.04em;
+  }
   .stat-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.4rem, 4vw, 3.2rem);
-    font-weight: 300; color: var(--orange);
-    line-height: 1; margin-bottom: 0.5rem;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 300; color: var(--white);
+    line-height: 1; margin-bottom: 1.2rem;
+    letter-spacing: -0.02em;
+  }
+  .stat-bar {
+    width: 2rem; height: 1.5px;
+    background: var(--orange); margin-bottom: 1rem;
   }
   .stat-label {
-    font-size: 0.72rem; letter-spacing: 0.15em;
-    text-transform: uppercase; color: rgba(255,255,255,0.4);
+    font-size: 0.58rem; letter-spacing: 0.38em;
+    text-transform: uppercase; color: rgba(255,255,255,0.85);
+    font-family: 'DM Sans', sans-serif; font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  .stat-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.88rem; color: rgba(255,255,255,0.28);
+    font-style: italic; line-height: 1.4;
   }
 
   /* ========== SECTIONS ========== */
@@ -452,7 +474,7 @@
     .nav-links { display: none; }
     .hamburger { display: flex; }
     .stats { grid-template-columns: repeat(2, 1fr); }
-    .stat { border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .stat { border-bottom: 1px solid rgba(255,255,255,0.05); padding: 3rem 2rem 2.5rem; }
     .products-grid { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
     .cat-grid { grid-template-columns: 1fr; }
     .why-grid { grid-template-columns: 1fr; }
@@ -505,10 +527,34 @@
 
 <section style="padding:0;">
   <div class="stats reveal">
-    <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Yıllık Deneyim</div></div>
-    <div class="stat"><div class="stat-num">120+</div><div class="stat-label">Renk Seçeneği</div></div>
-    <div class="stat"><div class="stat-num">28</div><div class="stat-label">İhracat Ülkesi</div></div>
-    <div class="stat"><div class="stat-num">600+</div><div class="stat-label">Aktif Müşteri</div></div>
+    <div class="stat">
+      <div class="stat-ghost">30</div>
+      <div class="stat-num">30+</div>
+      <div class="stat-bar"></div>
+      <div class="stat-label">Yıllık Deneyim</div>
+      <div class="stat-sub">1995'ten bugüne kesintisiz</div>
+    </div>
+    <div class="stat">
+      <div class="stat-ghost">120</div>
+      <div class="stat-num">120+</div>
+      <div class="stat-bar"></div>
+      <div class="stat-label">Renk Seçeneği</div>
+      <div class="stat-sub">Her yüzey için ayrı estetik</div>
+    </div>
+    <div class="stat">
+      <div class="stat-ghost">28</div>
+      <div class="stat-num">28</div>
+      <div class="stat-bar"></div>
+      <div class="stat-label">İhracat Ülkesi</div>
+      <div class="stat-sub">Küresel tedarik ağı</div>
+    </div>
+    <div class="stat">
+      <div class="stat-ghost">600</div>
+      <div class="stat-num">600+</div>
+      <div class="stat-bar"></div>
+      <div class="stat-label">Aktif Müşteri</div>
+      <div class="stat-sub">Türkiye ve dünya genelinde</div>
+    </div>
   </div>
 </section>
 
