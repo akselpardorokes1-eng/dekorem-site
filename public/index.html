@@ -733,6 +733,59 @@ footer{margin-top:auto;background:#060c18;border-top:1px solid rgba(255,255,255,
 </script>
 </div>
 
+<style>
+  #hakkimizda{background:var(--navy-deep,#0B1528);padding:6rem 5%}
+  .why-header{text-align:center;margin-bottom:3.5rem}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06)}
+  .w-card{background:var(--navy-deep,#0B1528);padding:2.8rem 2.4rem;position:relative;overflow:hidden;transition:background 0.3s}
+  .w-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1.5px;background:linear-gradient(to right,var(--orange),transparent);transform:scaleX(0);transform-origin:left;transition:transform 0.4s}
+  .w-card:hover{background:rgba(255,255,255,0.02)}
+  .w-card:hover::after{transform:scaleX(1)}
+  .w-icon{font-size:1.4rem;margin-bottom:1.2rem;color:var(--orange,#E8752A);opacity:0.85}
+  .w-card h3{font-size:0.9rem;font-weight:600;color:#fff;margin-bottom:0.6rem;letter-spacing:0.02em;font-family:'DM Sans',sans-serif}
+  .w-card p{font-size:0.78rem;color:rgba(255,255,255,0.38);line-height:1.75}
+  @media(max-width:768px){.why-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.why-grid{grid-template-columns:1fr}}
+</style>
+<section id="hakkimizda">
+  <div class="why-header reveal">
+    <p class="s-tag" style="color:var(--orange)">Hakkımızda</p>
+    <h2 class="s-title" style="color:#fff">Neden Dekorem?</h2>
+  </div>
+  <div class="why-grid">
+    <div class="w-card reveal">
+      <div class="w-icon">◆</div>
+      <h3>Sektörde İlk</h3>
+      <p>Türkiye'de PVC kaplama sektöründe ilk servis veren firma olarak 30 yılı aşkın deneyim.</p>
+    </div>
+    <div class="w-card reveal">
+      <div class="w-icon">◇</div>
+      <h3>Trend Belirleyici</h3>
+      <p>Mobilyada moda yaratıcı özelliğiyle dizaynda yön gösteren öncü marka.</p>
+    </div>
+    <div class="w-card reveal">
+      <div class="w-icon">○</div>
+      <h3>%100 Çevreci</h3>
+      <p>PP, PET ve PU seçenekleriyle çevreye duyarlı ve geleceğe yatırım yapan üretim anlayışı.</p>
+    </div>
+    <div class="w-card reveal">
+      <div class="w-icon">□</div>
+      <h3>Ücretsiz Kartela</h3>
+      <p>Müşterilerinize özel antetli kartela yapımında bedelsiz destek sağlayan ilk firma.</p>
+    </div>
+    <div class="w-card reveal">
+      <div class="w-icon">△</div>
+      <h3>Sigortalı Teslimat</h3>
+      <p>Sigorta sistemiyle malın sorunsuz ulaştırılmasında sektörde öncü güvence.</p>
+    </div>
+    <div class="w-card reveal">
+      <div class="w-icon">☆</div>
+      <h3>Global Tedarik</h3>
+      <p>Almanya ve Kore başta olmak üzere dünyanın önde gelen üreticilerinden doğrudan ithalat.</p>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-brand-col">
