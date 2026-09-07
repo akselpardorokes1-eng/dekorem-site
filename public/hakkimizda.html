@@ -36,20 +36,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0.9rem 5%;display:f
 .cards-section{padding:5rem 5%}
 .cards-header{text-align:center;margin-bottom:3.5rem}
 .cards-header h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:#fff;margin-bottom:0.5rem}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06)}
-.w-card{background:#0B1528;padding:3rem 2.6rem;position:relative;overflow:hidden;transition:background 0.25s,padding 0.25s;cursor:pointer}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06);position:relative;min-height:400px}
+.w-card{background:#0B1528;padding:3rem 2.6rem;position:relative;overflow:hidden;transition:background 0.25s,opacity 0.2s;cursor:pointer}
 .w-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1.5px;background:linear-gradient(to right,var(--orange),transparent);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
 .w-card:hover{background:rgba(255,255,255,0.025)}
-.w-card:hover::after,.w-card.w-active::after{transform:scaleX(1)}
-.w-card.w-active{grid-column:1/-1;background:rgba(255,255,255,0.03);display:grid;grid-template-columns:1fr 1.6fr;grid-template-rows:auto auto auto;gap:0 3.5rem;padding:3.5rem}
-.w-card.w-active .w-icon{grid-column:1;grid-row:1}
-.w-card.w-active h3{grid-column:1;grid-row:2;font-size:1.3rem}
-.w-card.w-active>p{grid-column:1;grid-row:3}
+.w-card:hover::after{transform:scaleX(1)}
+.why-grid.has-active .w-card:not(.w-active){opacity:0;pointer-events:none}
+.w-card.w-active{position:absolute;inset:0;z-index:10;background:#0c1830;display:grid;grid-template-columns:1fr 1.6fr;grid-template-rows:auto auto auto;gap:0 4rem;padding:4rem;border:1px solid rgba(232,117,42,0.18)}
+.w-card.w-active::after{transform:scaleX(1)}
+.w-card.w-active .w-icon{grid-column:1;grid-row:1;font-size:2.2rem;margin-bottom:1.6rem}
+.w-card.w-active h3{grid-column:1;grid-row:2;font-size:1.4rem;margin-bottom:0.8rem}
+.w-card.w-active>p{grid-column:1;grid-row:3;font-size:0.85rem}
 .w-card.w-active .w-detail{grid-column:2;grid-row:1/4;display:flex;align-items:center}
+.w-close{display:none;position:absolute;top:1.2rem;right:1.4rem;background:none;border:none;color:rgba(255,255,255,0.3);font-size:1.3rem;cursor:pointer;line-height:1;transition:color 0.2s}
+.w-close:hover{color:#fff}
+.w-card.w-active .w-close{display:block}
 .w-icon{font-size:1.6rem;margin-bottom:1.4rem;color:var(--orange);opacity:0.8}
 .w-card h3{font-size:1rem;font-weight:600;color:#fff;margin-bottom:0.7rem;font-family:'DM Sans',sans-serif}
 .w-card p{font-size:0.8rem;color:rgba(255,255,255,0.38);line-height:1.8}
-.w-detail{display:none;font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:300;color:rgba(255,255,255,0.55);line-height:1.9;border-left:1px solid rgba(232,117,42,0.3);padding-left:2.5rem}
+.w-detail{display:none;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;color:rgba(255,255,255,0.55);line-height:1.9;border-left:1px solid rgba(232,117,42,0.3);padding-left:2.8rem}
 
 footer{margin-top:auto;background:#060c18;border-top:1px solid rgba(255,255,255,0.06);padding:2.4rem 5% 1.6rem}
 .footer-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;max-width:1440px;margin:0 auto;padding-bottom:1.4rem;border-bottom:1px solid rgba(255,255,255,0.05);flex-wrap:wrap}
@@ -131,36 +136,42 @@ footer{margin-top:auto;background:#060c18;border-top:1px solid rgba(255,255,255,
   </div>
   <div class="why-grid">
     <div class="w-card reveal" onclick="wToggle(this)">
+      <button class="w-close" onclick="event.stopPropagation();wClose()">✕</button>
       <div class="w-icon">◆</div>
       <h3>Sektörde İlk</h3>
       <p>Türkiye'de PVC kaplama sektöründe ilk servis veren firma olarak 30 yılı aşkın deneyim.</p>
       <div class="w-detail"><p>1995 yılında İstanbul'da kurulan Dekorem, Türkiye'de PVC kaplama alanında servis veren ilk firma unvanını taşımaktadır. Onlarca yıllık birikim ve sektör deneyimiyle her yıl büyümeye, müşterilerimize en güncel çözümleri sunmaya devam ediyoruz.</p></div>
     </div>
     <div class="w-card reveal" onclick="wToggle(this)">
+      <button class="w-close" onclick="event.stopPropagation();wClose()">✕</button>
       <div class="w-icon">◇</div>
       <h3>Trend Belirleyici</h3>
       <p>Mobilyada moda yaratıcı özelliğiyle dizaynda yön gösteren öncü marka.</p>
       <div class="w-detail"><p>Avrupa'nın önde gelen fuar ve tasarım merkezlerini yakından takip ediyor; renk, doku ve yüzey trendlerini Türk mobilya sektörüne ilk taşıyan firma olma özelliğimizi koruyoruz. Koleksiyonlarımız her sezon yenilenir.</p></div>
     </div>
     <div class="w-card reveal" onclick="wToggle(this)">
+      <button class="w-close" onclick="event.stopPropagation();wClose()">✕</button>
       <div class="w-icon">○</div>
       <h3>%100 Çevreci</h3>
       <p>PP, PET ve PU seçenekleriyle çevreye duyarlı ve geleceğe yatırım yapan üretim anlayışı.</p>
       <div class="w-detail"><p>Geleneksel PVC'nin yanı sıra geri dönüştürülebilir PP, PET ve biyobazlı PU alternatifleri sunuyoruz. Sürdürülebilir üretim anlayışımız, hem çevresel sorumluluğumuzu hem de müşteri taleplerine verdiğimiz önemi yansıtmaktadır.</p></div>
     </div>
     <div class="w-card reveal" onclick="wToggle(this)">
+      <button class="w-close" onclick="event.stopPropagation();wClose()">✕</button>
       <div class="w-icon">□</div>
       <h3>Ücretsiz Kartela</h3>
       <p>Müşterilerinize özel antetli kartela yapımında bedelsiz destek sağlayan ilk firma.</p>
       <div class="w-detail"><p>Satış noktalarınızda profesyonel bir görünüm için firma logonuzu ve bilgilerinizi taşıyan özel kartelalar hazırlıyoruz. Bu hizmet, sektörde bir ilk olarak tamamen ücretsiz sunulmaktadır.</p></div>
     </div>
     <div class="w-card reveal" onclick="wToggle(this)">
+      <button class="w-close" onclick="event.stopPropagation();wClose()">✕</button>
       <div class="w-icon">△</div>
       <h3>Sigortalı Teslimat</h3>
       <p>Sigorta sistemiyle malın sorunsuz ulaştırılmasında sektörde öncü güvence.</p>
       <div class="w-detail"><p>Tüm sevkiyatlarımız kargo sigortası kapsamındadır. Ürününüz elinize sağlam ulaşmadığında tam tazminat güvencesi veriyoruz. Lojistik süreçleri baştan sona takip eden sistemimizle teslimat şeffaflığı sağlıyoruz.</p></div>
     </div>
     <div class="w-card reveal" onclick="wToggle(this)">
+      <button class="w-close" onclick="event.stopPropagation();wClose()">✕</button>
       <div class="w-icon">☆</div>
       <h3>Global Tedarik</h3>
       <p>Almanya ve Kore başta olmak üzere dünyanın önde gelen üreticilerinden doğrudan ithalat.</p>
@@ -191,9 +202,15 @@ const obs=new IntersectionObserver(e=>e.forEach((en,i)=>{if(en.isIntersecting){s
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
 function wToggle(card){
+  const grid=card.closest('.why-grid');
   const isActive=card.classList.contains('w-active');
   document.querySelectorAll('.w-card').forEach(c=>c.classList.remove('w-active'));
-  if(!isActive) card.classList.add('w-active');
+  grid.classList.remove('has-active');
+  if(!isActive){card.classList.add('w-active');grid.classList.add('has-active')}
+}
+function wClose(){
+  document.querySelectorAll('.w-card').forEach(c=>c.classList.remove('w-active'));
+  document.querySelectorAll('.why-grid').forEach(g=>g.classList.remove('has-active'));
 }
 </script>
 </body></html>
