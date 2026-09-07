@@ -558,6 +558,60 @@
   </div>
 </section>
 
+<style>
+  .home-cats{display:grid;grid-template-columns:repeat(4,1fr);height:80vh}
+  .home-cat{position:relative;overflow:hidden;cursor:pointer;text-decoration:none;display:block}
+  .home-cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1)}
+  .home-cat:hover img{transform:scale(1.06)}
+  .home-cat-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,14,28,0.82) 0%,rgba(8,14,28,0.2) 55%,rgba(8,14,28,0.05) 100%);transition:background 0.4s}
+  .home-cat:hover .home-cat-overlay{background:linear-gradient(to top,rgba(8,14,28,0.7) 0%,rgba(8,14,28,0.1) 55%,transparent 100%)}
+  .home-cat-body{position:absolute;bottom:2.5rem;left:2rem;right:2rem}
+  .home-cat-tag{font-size:0.52rem;letter-spacing:0.42em;text-transform:uppercase;color:var(--orange);font-family:'DM Sans',sans-serif;margin-bottom:0.6rem}
+  .home-cat-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,2vw,2rem);font-weight:300;color:#fff;line-height:1.15;text-shadow:0 2px 16px rgba(0,0,0,0.5)}
+  .home-cat-arrow{display:inline-block;margin-top:0.8rem;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-family:'DM Sans',sans-serif;transition:color 0.3s,transform 0.3s}
+  .home-cat:hover .home-cat-arrow{color:var(--orange);transform:translateX(4px)}
+  @media(max-width:768px){.home-cats{grid-template-columns:1fr 1fr;height:auto}.home-cat{height:50vw}}
+</style>
+<section style="padding:0;" id="urunler">
+  <div class="home-cats">
+    <a href="/urunler.html" class="home-cat">
+      <img src="images/urunler/1c84d6eb-6657-43ce-89b2-1b2655bb53c3.png" alt="PVC / PET Kaplama">
+      <div class="home-cat-overlay"></div>
+      <div class="home-cat-body">
+        <div class="home-cat-tag">Ürün Grubu</div>
+        <div class="home-cat-name">PVC / PET<br>Kaplama</div>
+        <div class="home-cat-arrow">İncele →</div>
+      </div>
+    </a>
+    <a href="/urunler.html" class="home-cat">
+      <img src="images/urunler/6b0ac825-d04c-413d-92bd-33bf3ac9d959.png" alt="Silikon Kaplama">
+      <div class="home-cat-overlay"></div>
+      <div class="home-cat-body">
+        <div class="home-cat-tag">Ürün Grubu</div>
+        <div class="home-cat-name">Silikon<br>Kaplama</div>
+        <div class="home-cat-arrow">İncele →</div>
+      </div>
+    </a>
+    <a href="/urunler.html" class="home-cat">
+      <img src="images/urunler/1beb01e5-f34c-47ea-9334-fd2a748261c8.png" alt="Tutkal">
+      <div class="home-cat-overlay"></div>
+      <div class="home-cat-body">
+        <div class="home-cat-tag">Ürün Grubu</div>
+        <div class="home-cat-name">Tutkal</div>
+        <div class="home-cat-arrow">İncele →</div>
+      </div>
+    </a>
+    <a href="/urunler.html" class="home-cat">
+      <img src="images/urunler/24c68fc5-f7ac-4a9a-9585-e67ee62a9678.png" alt="Kydex">
+      <div class="home-cat-overlay"></div>
+      <div class="home-cat-body">
+        <div class="home-cat-tag">Ürün Grubu</div>
+        <div class="home-cat-name">Kydex</div>
+        <div class="home-cat-arrow">İncele →</div>
+      </div>
+    </a>
+  </div>
+</section>
 
 <style>
   .kampanya { padding: 3rem 5%; max-width: 1200px; margin: 0 auto; }
