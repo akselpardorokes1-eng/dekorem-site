@@ -28,7 +28,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0.9rem 5%;display:f
 .cat-cards-section{padding:1rem 5% 0;max-width:1440px;margin:0 auto;width:100%}
 .cat-cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
 .cat-card{cursor:pointer;background:linear-gradient(145deg,#B84A18 0%,#D4651E 55%,#E07830 100%);position:relative;border-radius:22px;transition:transform 0.35s cubic-bezier(0.16,1,0.3,1),box-shadow 0.35s;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2.4rem 2rem 2rem;min-height:280px;overflow:hidden;box-shadow:0 8px 32px rgba(180,70,20,0.25)}
-.cat-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.08) 0%,transparent 60%);border-radius:22px;pointer-events:none}
+.cat-card::after{content:'';position:absolute;inset:0;border-radius:22px;pointer-events:none}
 .cat-card:hover{transform:translateY(-5px);box-shadow:0 20px 52px rgba(180,70,20,0.45)}
 .cat-card.active{transform:translateY(-5px);box-shadow:0 20px 52px rgba(180,70,20,0.45)}
 .cat-card-num{font-size:0.58rem;letter-spacing:0.38em;color:rgba(255,255,255,0.38);font-weight:600;font-family:'DM Sans',sans-serif;text-transform:uppercase}
@@ -42,10 +42,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0.9rem 5%;display:f
 #section-pvcpet{margin-left:-5%;margin-right:-5%;width:calc(100% + 10%);margin-top:-160px;position:relative;z-index:2}
 
 /* PVC CARD BG IMAGE */
-.cat-card[data-maincat="pvc"]{background:linear-gradient(to top,rgba(8,14,28,0.6) 0%,rgba(10,18,34,0.15) 45%,transparent 65%),url('images/urunler/1c84d6eb-6657-43ce-89b2-1b2655bb53c3.jpg') center/cover no-repeat}
-.cat-card[data-maincat="silikon"]{background:linear-gradient(to top,rgba(8,14,28,0.6) 0%,rgba(10,18,34,0.15) 45%,transparent 65%),url('images/urunler/6b0ac825-d04c-413d-92bd-33bf3ac9d959.jpg') center/cover no-repeat}
-.cat-card[data-maincat="tutkal"]{background:linear-gradient(to top,rgba(8,14,28,0.6) 0%,rgba(10,18,34,0.15) 45%,transparent 65%),url('images/urunler/1beb01e5-f34c-47ea-9334-fd2a748261c8.jpg') center/cover no-repeat}
-.cat-card[data-maincat="kaidex"]{background:linear-gradient(to top,rgba(8,14,28,0.6) 0%,rgba(10,18,34,0.15) 45%,transparent 65%),url('images/urunler/24c68fc5-f7ac-4a9a-9585-e67ee62a9678.jpg') center/cover no-repeat}
+.cat-card[data-maincat="pvc"]{background:linear-gradient(to top,rgba(4,8,20,0.72) 0%,transparent 30%),url('images/urunler/1c84d6eb-6657-43ce-89b2-1b2655bb53c3.jpg') center/cover no-repeat}
+.cat-card[data-maincat="silikon"]{background:linear-gradient(to top,rgba(4,8,20,0.72) 0%,transparent 30%),url('images/urunler/6b0ac825-d04c-413d-92bd-33bf3ac9d959.jpg') center/cover no-repeat}
+.cat-card[data-maincat="tutkal"]{background:linear-gradient(to top,rgba(4,8,20,0.72) 0%,transparent 30%),url('images/urunler/1beb01e5-f34c-47ea-9334-fd2a748261c8.jpg') center/cover no-repeat}
+.cat-card[data-maincat="kaidex"]{background:linear-gradient(to top,rgba(4,8,20,0.72) 0%,transparent 30%),url('images/urunler/24c68fc5-f7ac-4a9a-9585-e67ee62a9678.jpg') center/cover no-repeat}
 
 /* THICKNESS TABS */
 .thickness-section-header{text-align:center;padding:3rem 5% 0;position:relative;z-index:10}
