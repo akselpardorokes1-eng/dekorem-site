@@ -707,9 +707,11 @@ footer{margin-top:5rem;background:#060c18;border-top:1px solid rgba(255,255,255,
 .tutkal-img:first-child{-webkit-mask-image:linear-gradient(to right,black 60%,transparent 100%);mask-image:linear-gradient(to right,black 60%,transparent 100%)}
 .tutkal-img:last-child{margin-left:-10%;-webkit-mask-image:linear-gradient(to left,black 60%,transparent 100%);mask-image:linear-gradient(to left,black 60%,transparent 100%)}
 @media(max-width:768px){
-  .fullimg-wrap{height:60vw;min-height:260px}
+  .fullimg-wrap{height:auto}
+  .fullimg-wrap img{position:relative!important;inset:auto!important;width:100%!important;height:auto!important;object-fit:contain!important;-webkit-mask-image:none!important;mask-image:none!important;opacity:1!important}
+  .fullimg-wrap>div{display:none}
   .tutkal-wrap{height:auto;flex-direction:column}
-  .tutkal-img{width:100%;height:56vw;-webkit-mask-image:none!important;mask-image:none!important;margin-left:0!important}
+  .tutkal-img{width:100%;height:auto!important;object-fit:contain!important;-webkit-mask-image:none!important;mask-image:none!important;margin-left:0!important}
 }
 #kydex-grid{display:flex;height:100vh}
 .kydex-panel{position:relative;overflow:hidden;cursor:pointer;background:#0B1528;flex:1 1 0;transition:flex-grow 0.14s ease-out}
