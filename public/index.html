@@ -66,7 +66,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0.9rem 5%;display:f
 
 /* PRODUCTS */
 .products{padding:2rem 0 4rem;max-width:1440px;margin:0 auto}
-.products-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:0.55rem}
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.7rem}
 .p-card{cursor:pointer;transition:transform 0.35s,box-shadow 0.35s;border-radius:12px;overflow:hidden;background:transparent;border:none}
 .p-card:hover{transform:translateY(-5px);box-shadow:0 20px 56px rgba(0,0,0,0.55);border-color:rgba(255,255,255,0.14)}
 .p-card.hidden{display:none}
@@ -132,7 +132,7 @@ footer{margin-top:5rem;background:#060c18;border-top:1px solid rgba(255,255,255,
 .mobile-menu .nav-cta{padding:0.7rem 2rem!important;background:var(--orange)!important;color:#fff!important;border-radius:99px}
 
 /* RESPONSIVE */
-@media(max-width:1100px){.cat-cards-grid{grid-template-columns:repeat(2,1fr)}.products-grid{grid-template-columns:repeat(5,1fr)}}
+@media(max-width:1100px){.cat-cards-grid{grid-template-columns:repeat(2,1fr)}.products-grid{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:900px){
   .hamburger{display:flex}
   .nav-links{display:none}
@@ -142,7 +142,7 @@ footer{margin-top:5rem;background:#060c18;border-top:1px solid rgba(255,255,255,
   .cat-cards-grid{grid-template-columns:repeat(2,1fr);gap:0.7rem}
   .cat-card{min-height:140px;padding:1.2rem 0.8rem 1rem;border-radius:14px}
   .cat-card-name{font-size:0.8rem}
-  .products-grid{grid-template-columns:repeat(2,1fr);gap:0.8rem}
+  .products-grid{grid-template-columns:repeat(4,1fr);gap:0.4rem}
   .product-img{height:140px}
   .footer-inner{flex-direction:column}
   .footer-contact-col{text-align:left}
@@ -153,7 +153,7 @@ footer{margin-top:5rem;background:#060c18;border-top:1px solid rgba(255,255,255,
   .kydex-panel .kp-title{font-size:1.2rem}
 }
 @media(max-width:480px){
-  .products-grid{grid-template-columns:1fr}
+  .products-grid{grid-template-columns:repeat(4,1fr);gap:0.3rem}
   .cat-cards-grid{grid-template-columns:repeat(2,1fr)}
   .product-img{height:120px}
   .hero{padding:5rem 5% 1.5rem}
