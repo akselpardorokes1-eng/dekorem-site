@@ -702,10 +702,8 @@ footer{margin-top:5rem;background:#060c18;border-top:1px solid rgba(255,255,255,
 </div>
 <style>
 .fullimg-wrap{position:relative;width:100%;height:100vh;overflow:hidden;background:#080d18}
-.tutkal-wrap{position:relative;width:100%;height:100vh;overflow:hidden;display:flex}
-.tutkal-img{width:55%;height:100%;object-fit:cover;flex-shrink:0}
-.tutkal-img:first-child{-webkit-mask-image:linear-gradient(to right,black 60%,transparent 100%);mask-image:linear-gradient(to right,black 60%,transparent 100%)}
-.tutkal-img:last-child{margin-left:-10%;-webkit-mask-image:linear-gradient(to left,black 60%,transparent 100%);mask-image:linear-gradient(to left,black 60%,transparent 100%)}
+.tutkal-wrap{width:100%;display:flex;flex-direction:column}
+.tutkal-img{width:100%;height:auto;object-fit:cover;display:block}
 @media(max-width:768px){
   .fullimg-wrap{height:auto}
   .fullimg-wrap img{position:relative!important;inset:auto!important;width:100%!important;height:auto!important;object-fit:contain!important;-webkit-mask-image:none!important;mask-image:none!important;opacity:1!important}
