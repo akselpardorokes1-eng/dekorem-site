@@ -29,7 +29,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0.9rem 5%;display:f
 .hero-sub{font-size:0.83rem;color:rgba(255,255,255,0.85);max-width:480px;margin:0 auto;line-height:1.75}
 
 /* CATEGORY CARDS */
-.cat-cards-section{padding:1rem 5% 5rem;max-width:1440px;margin:0 auto;width:100%}
+.cat-cards-section{padding:1rem 5% 0;max-width:1440px;margin:0 auto;width:100%}
+@media(min-width:769px){.cat-cards-section{padding-bottom:5rem}}
 .cat-cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
 .cat-card{cursor:pointer;background:linear-gradient(145deg,#B84A18 0%,#D4651E 55%,#E07830 100%);position:relative;border-radius:22px;transition:transform 0.35s cubic-bezier(0.16,1,0.3,1),box-shadow 0.35s;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2.4rem 2rem 2rem;min-height:280px;overflow:hidden;box-shadow:0 8px 32px rgba(180,70,20,0.25)}
 .cat-card::after{content:'';position:absolute;inset:0;border-radius:22px;pointer-events:none}
@@ -145,7 +146,7 @@ footer{margin-top:0;background:#060c18;border-top:1px solid rgba(255,255,255,0.0
 @media(max-width:768px){
   .hero{padding:5.5rem 5% 2rem}
   .cat-cards-grid{grid-template-columns:repeat(2,1fr);gap:0.7rem}
-  .cat-cards-section{padding-bottom:0}
+
   .cat-card{min-height:140px;padding:1.2rem 0.8rem 1rem;border-radius:14px}
   .cat-card-name{font-size:0.8rem}
   .products-grid{grid-template-columns:repeat(4,1fr);gap:0.4rem}
